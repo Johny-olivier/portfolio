@@ -1349,13 +1349,14 @@ body::before {
     left: 0; 
     right: 0;
     background: var(--glass-bg);
-    backdrop-filter: blur(20px) saturate(180%);
-    -webkit-backdrop-filter: blur(20px) saturate(180%);
-    overflow: hidden;
+    backdrop-filter: blur(25px) saturate(180%);
+    -webkit-backdrop-filter: blur(25px) saturate(180%);
+    overflow-y: auto;
     transition: all 0.4s var(--ease-out);
     border-bottom: 1px solid var(--glass-border);
     display: none;
     z-index: 1000;
+    transform: translateZ(0); /* Force le rendu GPU */
   }
 
   .navbar-collapse.show {
