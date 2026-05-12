@@ -1409,7 +1409,7 @@ body::before {
   .nav-link {
     font-size: 1.15rem !important;
     font-weight: 700 !important;
-    padding: 12px !important;
+    padding: 0.6rem 1.8rem !important;
     border-radius: var(--r-md);
     color: var(--fg-1) !important;
   }
