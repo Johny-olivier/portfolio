@@ -64,9 +64,9 @@
   --border-1: rgba(0,0,0,0.07);
   --border-2: rgba(0,0,0,0.12);
 
-  --accent: #d97706; /* Amber/Ochre - Warm and alive */
-  --accent-dim: rgba(217, 119, 6, 0.08);
-  --accent-soft: rgba(217, 119, 6, 0.04);
+  --accent: #3b82f6; /* Vibrant Blue - Professional and clean */
+  --accent-dim: rgba(59, 130, 246, 0.1);
+  --accent-soft: rgba(59, 130, 246, 0.05);
 
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(0, 0, 0, 0.06);
