@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Johny Olivier Ainambinina - Développeur Full-Stack Junior | Portfolio Professionnel">
+    <meta name="author" content="Johny Olivier Ainambinina">
+    <meta name="theme-color" content="#080808">
+    <title>Johny Olivier Ainambinina — Développeur Full-Stack</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-theme="dark">
+
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavbar">
+        <div class="container-xxl">
+            <a class="navbar-brand" href="#home">Johny Olivier</a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center" id="navLinksContainer"></ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-section">
+        <div class="container-xxl">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 hero-content fade-in">
+                    <h1 class="hero-title" id="heroName"></h1>
+                    <p class="hero-subtitle" id="heroTitle"></p>
+                    <p class="hero-description" id="heroIntro"></p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary btn-lg">Voir mes projets <i class="fas fa-arrow-right"></i></a>
+                        <a href="cv_ainambinina_johny_olivier_stage_dev.pdf" class="btn btn-outline-secondary btn-lg" download><i class="fas fa-download"></i> Télécharger CV</a>
+                        <a href="#contact" class="btn btn-outline-secondary btn-lg"><i class="fas fa-envelope"></i> Me contacter</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 hero-image fade-in" style="animation-delay: 0.15s;">
+                    <div class="profile-image-wrapper">
+                        <img src="assets/images/johny.jpg" alt="Johny Olivier Ainambinina" class="profile-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-hint"><i class="fas fa-chevron-down"></i></div>
+    </section>
+
+    <section id="about" class="about-section py-section">
+        <div class="container-xxl">
+            <div class="section-header">
+                <div class="section-label">À propos</div>
+                <h2 class="section-title">Qui suis-je ?</h2>
+            </div>
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-6">
+                    <p class="about-text" id="aboutShortBio"></p>
+                    <p class="about-text">Mon approche combine rigueur technique et curiosité créative. Je suis un apprenant rapide, toujours enthousiaste pour explorer de nouvelles technologies et contribuer à des projets concrets.</p>
+                    <p class="about-text" id="aboutInterests"></p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="stats-grid" id="statsContainer"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section py-section">
+        <div class="container-xxl">
+            <div class="section-header">
+                <div class="section-label">Compétences</div>
+                <h2 class="section-title">Stack technique</h2>
+            </div>
+            <div class="skills-container" id="skillsContainer"></div>
+        </div>
+    </section>
+
+    <section id="education" class="education-section py-section">
+        <div class="container-xxl">
+            <div class="section-header">
+                <div class="section-label">Formation</div>
+                <h2 class="section-title">Parcours académique</h2>
+            </div>
+            <div class="timeline" id="educationContainer"></div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience-section py-section">
+        <div class="container-xxl">
+            <div class="section-header">
+                <div class="section-label">Expérience</div>
+                <h2 class="section-title">Expérience professionnelle</h2>
+            </div>
+            <div class="experience-timeline" id="experienceContainer"></div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section py-section">
+        <div class="container-xxl">
+            <div class="section-header">
+                <div class="section-label">Projets</div>
+                <h2 class="section-title">Projets sélectionnés</h2>
+            </div>
+            <div class="projects-grid" id="projectsContainer"></div>
+            <div class="github-section fade-in">
+                <div class="github-content">
+                    <div class="github-icon"><i class="fab fa-github"></i></div>
+                    <div class="github-text">
+                        <h3>Tous mes projets sur GitHub</h3>
+                        <p>Découvrez l'ensemble de mes projets, contributions et expérimentations.</p>
+                    </div>
+                    <a href="" class="btn btn-outline-secondary github-link" target="_blank" style="flex-shrink:0;"><i class="fab fa-github"></i> Visiter GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section py-section">
+        <div class="container-xxl">
+            <div class="section-header">
+                <div class="section-label">Contact</div>
+                <h2 class="section-title">Travaillons ensemble</h2>
+            </div>
+            <div class="contact-content">
+                <p class="contact-description">Je suis à l'écoute de nouvelles opportunités et collaborations. N'hésitez pas à m'écrire pour discuter de vos projets, idées ou opportunités professionnelles.</p>
+                <div class="contact-grid" id="contactContainer"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container-xxl">
+            <div class="footer-content">
+                <p>&copy; 2024 <span id="footerName"></span>. Tous droits réservés.</p>
+                <p class="footer-location"><i class="fas fa-map-marker-alt"></i> <span id="footerLocation"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+        const navbar = document.getElementById('mainNavbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 20);
+        }, { passive: true });
+    </script>
+</body>
+</html>
