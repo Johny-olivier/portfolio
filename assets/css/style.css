@@ -1399,19 +1399,25 @@ body::before {
 
   #navLinksContainer {
     flex-direction: column;
-    gap: 12px;
+    gap: 8px; /* Réduit le gap entre les liens */
     width: 100%;
     text-align: center;
   }
 
-  .nav-item { width: 100%; }
+  .nav-item { 
+    width: 100%; 
+    justify-content: center; /* Assure le centrage horizontal de l'item */
+  }
 
   .nav-link {
-    font-size: 1.15rem !important;
+    font-size: 1.05rem !important; /* Taille de police légèrement réduite */
     font-weight: 700 !important;
     padding: 0.6rem 1.8rem !important;
     border-radius: var(--r-md);
     color: var(--fg-1) !important;
+    justify-content: center; /* Centre le texte si c'est un flex container */
+    width: fit-content; /* Permet au lien de ne pas prendre toute la largeur pour mieux centrer le background au clic */
+    margin: 0 auto; /* Centre le lien dans son conteneur parent */
   }
 
   .nav-link.active {
