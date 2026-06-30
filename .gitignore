@@ -6,3 +6,4 @@ prompt.txt
 node_modules/
 dist/
 build/
+push_script.sh
