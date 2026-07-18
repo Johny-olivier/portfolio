@@ -61,8 +61,9 @@ const SKILLS_DATABASES = [
   { name: 'MySQL', icon: 'ph ph-database', level: 'avancé' },
   { name: 'PostgreSQL', icon: 'ph ph-database', level: 'intermédiaire' },
   { name: 'SQLite', icon: 'ph ph-database', level: 'intermédiaire' },
-  { name: 'Oracle', icon: 'ph ph-database', level: 'débutant' },
-  { name: 'Prisma', icon: 'ph ph-database', level: 'intermédiaire' },
+  { name: 'Oracle', icon: 'ph ph-database', level: 'intermédiaire' },
+  { name: 'SQL Server', icon: 'ph ph-database', level: 'intermédiaire' },
+  { name: 'Prisma', icon: 'ph ph-database', level: 'débutant' },
 ];
 
 const SKILLS_AI = [
@@ -224,6 +225,38 @@ const PROJECTS = [
   },
   {
     id: 9,
+    title: 'Mini Framework Java',
+    description: "Framework Java from scratch reproduisant les mécanismes essentiels de Spring Boot : ORM, injection de dépendances, servlet, déploiement automatisé. Projet démontrant une compréhension profonde du fonctionnement interne des frameworks.",
+    stack: ['Java', 'Maven', 'Servlet', 'ORM', 'Architecture'],
+    github: 'https://github.com/Johny-olivier/mini-framework-java',
+    featured: true
+  },
+  {
+    id: 10,
+    title: 'TrustMarket — Marketplace Intelligente',
+    description: "Marketplace connectant acheteurs et vendeurs avec un score de confiance dynamique, comparateur de prix intelligent, détection anti-arnaque et géolocalisation. Interface moderne avec TanStack Router, Cloudflare, shadcn/ui.",
+    stack: ['TypeScript', 'React', 'TanStack', 'Cloudflare', 'shadcn/ui', 'Framer'],
+    github: 'https://github.com/Johny-olivier/trust-connect-local',
+    featured: true
+  },
+  {
+    id: 11,
+    title: 'Ravinala Crash — Jeu Éducatif',
+    description: "Jeu éducatif type crash game avec animation temps réel du multiplicateur, encaissement des gains, historique des parties et interface bilingue (FR/EN). API backend simulée, responsive design et architecture modulaire.",
+    stack: ['React 19', 'TypeScript', 'TailwindCSS', 'i18n', 'Vite'],
+    github: 'https://github.com/Johny-olivier/ravinala-crash-bolt',
+    featured: true
+  },
+  {
+    id: 12,
+    title: 'System Command Center',
+    description: "Dashboard de monitoring système complet avec authentification, WebSocket temps réel, visualisation CPU/RAM/disque/réseau/processus. Architecture modulaire avec TanStack Query, contextes d'authentification et WebSocket.",
+    stack: ['TypeScript', 'React', 'TanStack Query', 'WebSocket', 'shadcn/ui'],
+    github: 'https://github.com/Johny-olivier/system-command-center',
+    featured: true
+  },
+  {
+    id: 13,
     title: 'SIG Madagascar',
     description: "Système d'Information Géographique pour les routes de Madagascar. Visualisation spatiale et gestion de données géographiques.",
     stack: ['Java', 'Maven', 'PostGIS', 'Docker'],
@@ -231,7 +264,7 @@ const PROJECTS = [
     featured: false
   },
   {
-    id: 10,
+    id: 14,
     title: 'Interface Samba',
     description: "Interface de gestion moderne pour serveur Samba, permettant de gérer les partages réseau et les utilisateurs.",
     stack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
@@ -239,7 +272,7 @@ const PROJECTS = [
     featured: false
   },
   {
-    id: 11,
+    id: 15,
     title: 'Terrain ML Analysis',
     description: "Analyse et prédiction de types de terrains via Machine Learning avec visualisation interactive sur carte.",
     stack: ['Python', 'Scikit-learn', 'Pandas', 'Streamlit'],
