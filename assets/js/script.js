@@ -66,8 +66,8 @@ class PortfolioRenderer {
       { title: 'Backend', icon: 'ph ph-gear-six', skills: SKILLS_BACKEND },
       { title: 'Architecture & Concepts', icon: 'ph ph-share-network', skills: SKILLS_ARCHITECTURE },
       { title: 'Bases de Données', icon: 'ph ph-database', skills: SKILLS_DATABASES },
-      { title: 'Outils', icon: 'ph ph-wrench', skills: SKILLS_TOOLS },
-      { title: 'Systèmes & OS', icon: 'ph ph-terminal', skills: SKILLS_SYSTEMS }
+      { title: 'IA & LLM', icon: 'ph ph-robot', skills: SKILLS_AI },
+      { title: 'Outils', icon: 'ph ph-wrench', skills: SKILLS_TOOLS }
     ];
 
     const groups = [

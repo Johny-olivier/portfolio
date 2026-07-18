@@ -1,10 +1,10 @@
 const PERSONAL_INFO = {
   firstName: 'Johny Olivier',
   lastName: 'AINAMBININA',
-  title: 'Développeur Full-Stack Junior',
-  introduction: 'Étudiant en informatique à ITU Andoharanofotsy, spécialisé en développement web avec une solide maîtrise du frontend et du backend. Je transforme des idées en solutions logicielles robustes.',
-  shortBio: 'Étudiant passionné en informatique à ITU Andoharanofotsy avec une spécialisation en développement web et architecture logicielle. Rigoureux, curieux et orienté solution.',
-  interests: ['les jeux vidéo', 'le basketball'],
+  title: 'Développeur Full-Stack & Fondateur ACOS',
+  introduction: 'Étudiant en informatique à ITU Andoharanofotsy, fondateur du concept ACOS (AI Company Operating System). Je conçois des architectures logicielles robustes et des solutions full-stack avec une approche industrialisée du développement assisté par IA.',
+  shortBio: 'Fondateur du concept ACOS (AI Company Operating System), étudiant en informatique à ITU Andoharanofotsy. Passionné par l\'architecture logicielle, le développement full-stack et l\'orchestration IA.',
+  interests: ['les jeux vidéo', 'le basketball', 'l\'intelligence artificielle'],
   location: 'Antananarivo, Madagascar'
 };
 
@@ -18,10 +18,10 @@ const CONTACT_INFO = {
 };
 
 const STATISTICS = [
-  { number: '20+', label: 'Projets réalisés' },
-  { number: '12+', label: 'Technologies maîtrisées' },
+  { number: '25+', label: 'Projets réalisés' },
+  { number: '15+', label: 'Technologies maîtrisées' },
   { number: '3+', label: "Années d'expérience" },
-  { number: '+90%', label: 'Dédié à l\'excellence' }
+  { number: '1', label: 'Concept ACOS fondé' }
 ];
 
 const SKILLS_FRONTEND = [
@@ -30,9 +30,9 @@ const SKILLS_FRONTEND = [
   { name: 'JavaScript', icon: 'ph ph-code-block', level: 'avancé' },
   { name: 'TypeScript', icon: 'ph ph-brackets-curly', level: 'intermédiaire' },
   { name: 'React', icon: 'ph ph-atom', level: 'intermédiaire' },
-  { name: 'Next.js', icon: 'ph ph-lightning', level: 'débutant' },
-  { name: 'Bootstrap', icon: 'ph ph-columns', level: 'intermédiaire' },
+  { name: 'Next.js', icon: 'ph ph-lightning', level: 'intermédiaire' },
   { name: 'Tailwind CSS', icon: 'ph ph-wind', level: 'intermédiaire' },
+  { name: 'Bootstrap', icon: 'ph ph-columns', level: 'intermédiaire' },
 ];
 
 const SKILLS_BACKEND = [
@@ -42,27 +42,36 @@ const SKILLS_BACKEND = [
   { name: 'Spring Boot', icon: 'ph ph-flower', level: 'intermédiaire' },
   { name: 'Node.js', icon: 'ph ph-code', level: 'intermédiaire' },
   { name: 'Python', icon: 'ph ph-terminal', level: 'intermédiaire' },
-  { name: 'CodeIgniter', icon: 'ph ph-fire', level: 'intermédiaire' },
-  { name: 'FlightPHP', icon: 'ph ph-airplane', level: 'intermédiaire' },
-  { name: 'Kotlin', icon: 'ph ph-code', level: 'débutant' },
+  { name: 'FastAPI', icon: 'ph ph-lightning', level: 'intermédiaire' },
+  { name: 'Express', icon: 'ph ph-server', level: 'intermédiaire' },
   { name: 'C', icon: 'ph ph-copyright', level: 'intermédiaire' },
-  { name: 'C#', icon: 'ph ph-hash', level: 'débutant' },
 ];
 
 const SKILLS_ARCHITECTURE = [
   { name: 'MVC', icon: 'ph ph-share-network', level: 'avancé' },
   { name: 'DAO', icon: 'ph ph-stack', level: 'avancé' },
+  { name: 'DDD', icon: 'ph ph-cube', level: 'intermédiaire' },
   { name: 'Client-Serveur', icon: 'ph ph-network', level: 'avancé' },
   { name: 'REST API', icon: 'ph ph-cube', level: 'intermédiaire' },
-  { name: 'Authentification', icon: 'ph ph-lock-key', level: 'intermédiaire' },
+  { name: 'ECS', icon: 'ph ph-shapes', level: 'intermédiaire' },
   { name: 'POO avancée', icon: 'ph ph-shapes', level: 'avancé' }
 ];
 
 const SKILLS_DATABASES = [
   { name: 'MySQL', icon: 'ph ph-database', level: 'avancé' },
   { name: 'PostgreSQL', icon: 'ph ph-database', level: 'intermédiaire' },
+  { name: 'SQLite', icon: 'ph ph-database', level: 'intermédiaire' },
   { name: 'Oracle', icon: 'ph ph-database', level: 'débutant' },
-  { name: 'SQL Server', icon: 'ph ph-database', level: 'débutant' }
+  { name: 'Prisma', icon: 'ph ph-database', level: 'intermédiaire' },
+];
+
+const SKILLS_AI = [
+  { name: 'Ollama', icon: 'ph ph-robot', level: 'avancé' },
+  { name: 'LLM', icon: 'ph ph-brain', level: 'intermédiaire' },
+  { name: 'Prompt Engineering', icon: 'ph ph-chats', level: 'avancé' },
+  { name: 'MCP', icon: 'ph ph-plugs', level: 'intermédiaire' },
+  { name: 'ACOS', icon: 'ph ph-lightbulb', level: 'avancé' },
+  { name: 'Tauri', icon: 'ph ph-window', level: 'débutant' },
 ];
 
 const SKILLS_TOOLS = [
@@ -70,18 +79,9 @@ const SKILLS_TOOLS = [
   { name: 'GitHub', icon: 'ph ph-github-logo', level: 'avancé' },
   { name: 'Docker', icon: 'ph ph-shipping-container', level: 'intermédiaire' },
   { name: 'Maven', icon: 'ph ph-package', level: 'avancé' },
-  { name: 'DBeaver', icon: 'ph ph-database', level: 'intermédiaire' },
-  { name: 'Figma', icon: 'ph ph-figma-logo', level: 'débutant' },
-  { name: 'Android Studio', icon: 'ph ph-android-logo', level: 'débutant' }
-];
-
-const SKILLS_SYSTEMS = [
-  { name: 'Linux', icon: 'ph ph-terminal', level: 'avancé' },
-  { name: 'Windows', icon: 'ph ph-windows-logo', level: 'intermédiaire' },
-  { name: 'Terminal/CLI', icon: 'ph ph-terminal', level: 'avancé' },
+  { name: 'Linux', icon: 'ph ph-terminal-window', level: 'avancé' },
   { name: 'Bash', icon: 'ph ph-scroll', level: 'intermédiaire' },
-  { name: 'SSH', icon: 'ph ph-key', level: 'intermédiaire' },
-  { name: 'ROS2', icon: 'ph ph-robot', level: 'débutant' }
+  { name: 'Figma', icon: 'ph ph-figma-logo', level: 'débutant' },
 ];
 
 const EDUCATION = [
@@ -109,6 +109,18 @@ const EDUCATION = [
 ];
 
 const EXPERIENCE = [
+  {
+    title: 'Fondateur & CEO — Concept ACOS',
+    company: 'AI Company Operating System',
+    period: '2026 – Présent',
+    description: 'Création et développement du concept ACOS, un système d\'exploitation conceptuel pour entreprises IA.',
+    tasks: [
+      'Conception d\'un framework standardisé pour orchestrer le développement assisté par IA',
+      'Définition de 8 documents fondateurs (architecture, processus, standards, templates)',
+      'Développement d\'ACOS-O, l\'orchestrateur qui implémente le concept ACOS dans son propre développement',
+      'Architecture DDD avec backend Express/SQLite et frontend React/Zustand'
+    ]
+  },
   {
     title: 'Hackathon ITU Website Redesign',
     company: 'ITU Andoharanofotsy',
@@ -148,74 +160,90 @@ const EXPERIENCE = [
 const PROJECTS = [
   {
     id: 1,
-    title: 'SIG Madagascar',
-    description: "Système d'Information Géographique pour les routes de Madagascar. Visualisation spatiale et gestion de données géographiques.",
-    stack: ['Java', 'Maven', 'PostGIS', 'Docker'],
-    github: 'https://github.com/Johny-olivier/sig-madagascar',
+    title: 'ACOS — AI Company Operating System',
+    description: "Système d'exploitation conceptuel pour entreprises IA. Framework standardisé pour orchestrer le développement assisté par IA avec une hiérarchie CEO → Architectes → Développeurs IA.",
+    stack: ['Concept', 'Architecture', 'Documentation', 'Standards'],
+    github: 'https://github.com/Johny-olivier/acos',
     featured: true
   },
   {
     id: 2,
-    title: 'Interface Samba',
-    description: 'Interface de gestion moderne et intuitive pour un serveur Samba, permettant de gérer les partages et les utilisateurs.',
-    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    github: 'https://github.com/Johny-olivier/interface-samba',
+    title: 'ACOS Orchestrator (ACOS-O)',
+    description: "Application web locale qui automatise l'exploitation d'ACOS. Implémente le concept ACOS dans son propre développement. Architecture DDD avec file watching, SSE et gestion de tâches IA.",
+    stack: ['TypeScript', 'React', 'Express', 'SQLite', 'Zustand', 'TailwindCSS'],
+    github: 'https://github.com/Johny-olivier/acos-orchestrator',
     featured: true
   },
   {
     id: 3,
-    title: 'Taxi-Brousse Réservation',
-    description: 'Plateforme complète de réservation de places de taxi-brousse avec gestion des trajets, des coopératives et des passagers.',
-    stack: ['Spring Boot', 'Java', 'Maven', 'MySQL'],
-    github: 'https://github.com/Johny-olivier/taxi-brousse-reservation',
-    featured: false
+    title: 'Local AI Agent',
+    description: "Assistant IA 100 % local avec accès système complet. Shell interactif, lecture de documents, mémoire sémantique, recherche web. Application desktop native Tauri.",
+    stack: ['Python', 'FastAPI', 'Next.js', 'Tauri', 'Ollama', 'LLM'],
+    github: 'https://github.com/Johny-olivier/local-ai-agent',
+    featured: true
   },
   {
     id: 4,
+    title: 'Contra 1990 Remake',
+    description: "Remake complet du jeu légendaire Contra avec architecture ECS. 8 niveaux, 8 boss, système d'armes, particules, animations et audio. Moteur de jeu écrit de zéro.",
+    stack: ['Python', 'Pygame', 'ECS', 'Game Engine'],
+    github: 'https://github.com/Johny-olivier/contra-1990-remake',
+    featured: true
+  },
+  {
+    id: 5,
+    title: 'Facebook Clone',
+    description: "Clone fonctionnel de Facebook avec API REST complète, messagerie WebSocket temps réel, authentification SPA, fil d'actualités, stories et système d'amis.",
+    stack: ['Laravel', 'React', 'WebSocket', 'SQLite', 'Sanctum'],
+    github: 'https://github.com/Johny-olivier/facebook-clone',
+    featured: true
+  },
+  {
+    id: 6,
+    title: 'FootLive',
+    description: "Application de livescore football multi-compétitions en temps réel. Cache intelligent, agrégation de données depuis 2 API, support de 13 ligues internationales.",
+    stack: ['React', 'Node.js', 'Express', 'TailwindCSS', 'API'],
+    github: 'https://github.com/Johny-olivier/footlive',
+    featured: true
+  },
+  {
+    id: 7,
+    title: 'Family Private',
+    description: "Réseau social familial privé avec chiffrement AES-256-GCM, authentification multi-facteurs, messagerie privée, galerie multimédia et backoffice administrateur.",
+    stack: ['PHP', 'MySQL', 'MVC', 'AES-256', 'JavaScript'],
+    github: 'https://github.com/Johny-olivier/family-private',
+    featured: true
+  },
+  {
+    id: 8,
     title: 'PC Monitor',
-    description: 'Application client-serveur pour le monitoring en temps réel des performances système (CPU, RAM) via Sockets.',
+    description: "Application client-serveur pour le monitoring en temps réel des performances système (CPU, RAM) via Sockets avec interface Swing.",
     stack: ['Java', 'Sockets', 'Swing', 'Maven'],
     github: 'https://github.com/Johny-olivier/pc-monitor',
     featured: true
   },
   {
-    id: 5,
-    title: 'Terrain ML Analysis',
-    description: 'Analyse et prédiction de types de terrains via Machine Learning avec visualisation interactive sur carte.',
-    stack: ['Python', 'Scikit-learn', 'Pandas', 'Streamlit'],
-    github: 'https://github.com/Johny-olivier/terrain-ml-analysis',
-    featured: true
-  },
-  {
-    id: 6,
-    title: 'Élevage Poulet Simulation',
-    description: 'Système de simulation et de gestion d\'un élevage de poulets, incluant le suivi de croissance et de santé.',
-    stack: ['Node.js', 'Angular', 'SQL Server'],
-    github: 'https://github.com/Johny-olivier/elevage-poulet-simulation',
-    featured: true
-  },
-  {
-    id: 7,
-    title: 'Nutri Goal',
-    description: 'Application de suivi nutritionnel et d\'objectifs de santé avec recommandations personnalisées de régimes.',
-    stack: ['CodeIgniter 4', 'PHP', 'MySQL', 'JavaScript'],
-    github: 'https://github.com/Johny-olivier/nutri-goal',
-    featured: true
-  },
-  {
-    id: 8,
-    title: 'Ordonnance Médicale Algo',
-    description: "Algorithme d'ordonnancement récursif complexe pour optimiser la gestion des prescriptions médicales.",
-    stack: ['Java', 'Maven', 'Algorithmes'],
-    github: 'https://github.com/Johny-olivier/ordonnance-medicale-algo',
+    id: 9,
+    title: 'SIG Madagascar',
+    description: "Système d'Information Géographique pour les routes de Madagascar. Visualisation spatiale et gestion de données géographiques.",
+    stack: ['Java', 'Maven', 'PostGIS', 'Docker'],
+    github: 'https://github.com/Johny-olivier/sig-madagascar',
     featured: false
   },
   {
-    id: 9,
-    title: 'Gestion de Vols Avion',
-    description: "Application de gestion de vols d'avion utilisant l'architecture MVC.",
-    stack: ['Java', 'Servlets', 'MVC', 'PostgreSQL'],
-    github: 'https://github.com/Johny-olivier/gestion-vols-avion',
+    id: 10,
+    title: 'Interface Samba',
+    description: "Interface de gestion moderne pour serveur Samba, permettant de gérer les partages réseau et les utilisateurs.",
+    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+    github: 'https://github.com/Johny-olivier/interface-samba',
+    featured: false
+  },
+  {
+    id: 11,
+    title: 'Terrain ML Analysis',
+    description: "Analyse et prédiction de types de terrains via Machine Learning avec visualisation interactive sur carte.",
+    stack: ['Python', 'Scikit-learn', 'Pandas', 'Streamlit'],
+    github: 'https://github.com/Johny-olivier/terrain-ml-analysis',
     featured: false
   }
 ];
