@@ -457,7 +457,7 @@ img { display: block; max-width: 100%; }
   color: var(--accent);
   background: var(--accent-dim);
   padding: 5px 12px;
-  border-radius: 100px;
+  border-radius: 10px;
   margin-bottom: var(--space-5);
   width: fit-content;
 }
