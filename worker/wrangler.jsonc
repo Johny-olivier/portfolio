@@ -6,7 +6,7 @@
   "workers_dev": true,
   "ai": { "binding": "AI" },
   "vars": {
-    "ALLOWED_ORIGINS": "https://johny-olivier.github.io",
+    "ALLOWED_ORIGINS": "https://johny-olivier.github.io,http://127.0.0.1:4173",
   },
   "ratelimits": [
     {
