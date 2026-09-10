@@ -267,13 +267,14 @@ h1 {
   line-height: 0.95;
   font-weight: 600;
 }
-h1 em {
+h1 em,
+h1 span {
   display: block;
-  font-family: Georgia, serif;
-  font-style: italic;
+  font-family: var(--display);
+  font-style: normal;
   font-weight: 400;
   letter-spacing: -0.03em;
-  color: #5a6b4a;
+  color: var(--muted);
   margin-top: 6px;
   font-size: 0.92em;
   line-height: 0.95;
@@ -1469,7 +1470,8 @@ dialog::backdrop {
     letter-spacing: -0.03em;
     margin-top: 0;
   }
-  h1 em {
+  h1 em,
+  h1 span {
     letter-spacing: -0.03em;
   }
   .hero-description {
