@@ -106,15 +106,23 @@ const records = [
       p.goal +
       " Le CV ne précise ni date de disponibilité, ni rémunération, ni type de contrat souhaité : contactez Johny pour en discuter.",
   },
-  ...SKILLS.map((s) => ({
-    id: s.id,
-    title: s.level,
-    section: "skill-" + s.id,
-    keywords: s.items
-      .map((x) => x.toLowerCase())
-      .concat(["competences", "niveau", "stack", "technologies", "skills"]),
-    text: s.items.join(", ") + ". " + s.description,
-  })),
+  ...SKILLS.map((s) => {
+    const allItems = s.niveaux
+      ? Object.values(s.niveaux).flat()
+      : s.items || [];
+    const niveauxText = s.niveaux
+      ? ` Avancé : ${(s.niveaux.avance || []).join(", ")}. Intermédiaire : ${(s.niveaux.intermediaire || []).join(", ")}. Débutant : ${(s.niveaux.debutant || []).join(", ")}.`
+      : "";
+    return {
+      id: s.id,
+      title: s.level,
+      section: "skill-" + s.id,
+      keywords: allItems
+        .map((x) => x.toLowerCase())
+        .concat(["competences", "niveau", "stack", "technologies", "skills"]),
+      text: allItems.join(", ") + "." + niveauxText + " " + s.description,
+    };
+  }),
   ...PROJECTS.map((s) => ({
     id: s.id,
     title: s.name,

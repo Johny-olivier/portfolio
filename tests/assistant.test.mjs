@@ -43,10 +43,11 @@ test("Données partagées : profil courant et projets vérifiés", () => {
     knowledge.find((s) => s.id === "contact").text,
     /ainambininajohnyolivier@gmail.com/,
   );
-  assert.match(
-    knowledge.find((s) => s.id === "backend").text,
-    /PHP, Laravel, Java/,
-  );
+  const backendText = knowledge.find((s) => s.id === "backend").text;
+  assert.match(backendText, /PHP/);
+  assert.match(backendText, /Laravel/);
+  assert.match(backendText, /Java/);
+  assert.match(backendText, /Avancé/);
   assert.match(knowledge.find((s) => s.id === "frontend").text, /React/);
   assert.equal(vm.runInContext("PROJECTS.length", context), 11);
 });

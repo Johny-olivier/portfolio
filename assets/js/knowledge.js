@@ -103,11 +103,11 @@ const KNOWLEDGE = [
     "section": "skill-backend",
     "keywords": [
       "php",
-      "laravel",
       "java",
-      "node.js",
+      "laravel",
       "flightphp",
       "codeigniter",
+      "node.js",
       "spring",
       "spring boot",
       "python",
@@ -117,7 +117,7 @@ const KNOWLEDGE = [
       "technologies",
       "skills"
     ],
-    "text": "PHP, Laravel, Java, Node.js, FlightPHP, CodeIgniter, Spring, Spring Boot, Python. La logique, l'architecture et les données."
+    "text": "PHP, Java, Laravel, FlightPHP, CodeIgniter, Node.js, Spring, Spring Boot, Python. Avancé : PHP, Java. Intermédiaire : Laravel, FlightPHP, CodeIgniter, Node.js. Débutant : Spring, Spring Boot, Python. La logique, l'architecture et les données."
   },
   {
     "id": "frontend",
@@ -127,18 +127,18 @@ const KNOWLEDGE = [
       "html5",
       "css3",
       "javascript",
+      "bootstrap",
+      "tailwind",
       "react",
       "angular",
       "typescript",
-      "bootstrap",
-      "tailwind",
       "competences",
       "niveau",
       "stack",
       "technologies",
       "skills"
     ],
-    "text": "HTML5, CSS3, JavaScript, React, Angular, TypeScript, Bootstrap, Tailwind. L'interface, le rendu et l'expérience utilisateur."
+    "text": "HTML5, CSS3, JavaScript, Bootstrap, Tailwind, React, Angular, TypeScript. Avancé : HTML5, CSS3, JavaScript. Intermédiaire : Bootstrap, Tailwind. Débutant : React, Angular, TypeScript. L'interface, le rendu et l'expérience utilisateur."
   },
   {
     "id": "architecture",
@@ -146,18 +146,18 @@ const KNOWLEDGE = [
     "section": "skill-architecture",
     "keywords": [
       "mvc",
-      "dao",
-      "client-serveur",
+      "poo avancée",
       "rest api",
       "authentification",
-      "poo avancée",
+      "dao",
+      "client-serveur",
       "competences",
       "niveau",
       "stack",
       "technologies",
       "skills"
     ],
-    "text": "MVC, DAO, Client-Serveur, REST API, Authentification, POO avancée. Patrons de conception et bonnes pratiques."
+    "text": "MVC, POO avancée, REST API, Authentification, DAO, Client-Serveur. Avancé : MVC, POO avancée. Intermédiaire : REST API, Authentification. Débutant : DAO, Client-Serveur. Patrons de conception et bonnes pratiques."
   },
   {
     "id": "databases",
@@ -165,9 +165,9 @@ const KNOWLEDGE = [
     "section": "skill-databases",
     "keywords": [
       "mysql",
-      "oracle",
-      "postgresql",
       "sqlite",
+      "postgresql",
+      "oracle",
       "microsoft sql server",
       "competences",
       "niveau",
@@ -175,7 +175,7 @@ const KNOWLEDGE = [
       "technologies",
       "skills"
     ],
-    "text": "MySQL, Oracle, PostgreSQL, SQLite, Microsoft SQL Server. Stockage et persistance."
+    "text": "MySQL, SQLite, PostgreSQL, Oracle, Microsoft SQL Server. Avancé : MySQL. Intermédiaire : SQLite, PostgreSQL. Débutant : Oracle, Microsoft SQL Server. Stockage et persistance."
   },
   {
     "id": "outils",
@@ -183,14 +183,14 @@ const KNOWLEDGE = [
     "section": "skill-outils",
     "keywords": [
       "git",
+      "linux (ubuntu)",
+      "windows 11",
+      "xampp",
       "docker",
       "maven",
       "tomcat",
-      "xampp",
       "dbeaver",
       "filezilla",
-      "linux (ubuntu)",
-      "windows 11",
       "opencode",
       "gemini cli",
       "codex cli",
@@ -202,7 +202,7 @@ const KNOWLEDGE = [
       "technologies",
       "skills"
     ],
-    "text": "Git, Docker, Maven, Tomcat, XAMPP, DBeaver, FileZilla, Linux (Ubuntu), Windows 11, Opencode, Gemini CLI, Codex CLI, Cline, Ollama. Environnement de développement et IA."
+    "text": "Git, Linux (Ubuntu), Windows 11, XAMPP, Docker, Maven, Tomcat, DBeaver, FileZilla, Opencode, Gemini CLI, Codex CLI, Cline, Ollama. Avancé : Git, Linux (Ubuntu), Windows 11, XAMPP. Intermédiaire : Docker, Maven, Tomcat, DBeaver, FileZilla. Débutant : Opencode, Gemini CLI, Codex CLI, Cline, Ollama. Environnement de développement et IA."
   },
   {
     "id": "family-private",

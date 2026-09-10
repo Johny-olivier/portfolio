@@ -781,7 +781,21 @@ h1 span {
 .skill-card p {
   font-size: 12px;
   color: var(--muted);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+}
+.skill-sep {
+  border: 0;
+  border-top: 1px solid #e0e6d6;
+  margin: 16px 0 10px;
+}
+.skill-level {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage-ink);
+  margin-bottom: 8px;
 }
 .skill-card .tags {
   gap: 7px;

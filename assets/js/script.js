@@ -99,7 +99,23 @@ SKILLS.forEach((s) => {
   card.id = "skill-" + s.id;
   const heading = node("div", "skill-heading");
   heading.append(icon(s.icon), node("h3", "", s.level));
-  card.append(heading, node("p", "", s.description), tags(s.items));
+  card.append(heading, node("p", "", s.description));
+  const niveaux = s.niveaux || (s.items ? { avance: s.items } : null);
+  if (niveaux) {
+    const order = [
+      { key: "avance", label: "Avancé" },
+      { key: "intermediaire", label: "Intermédiaire" },
+      { key: "debutant", label: "Débutant" },
+    ];
+    order.forEach(({ key, label }) => {
+      const items = niveaux[key];
+      if (!items || !items.length) return;
+      const hr = document.createElement("hr");
+      hr.className = "skill-sep";
+      const lvl = node("span", "skill-level", label);
+      card.append(hr, lvl, tags(items));
+    });
+  } else if (s.items) card.append(tags(s.items));
   $("#skills-container").append(card);
 });
 function journey(items, target) {
