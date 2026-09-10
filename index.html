@@ -1,207 +1,541 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Johny Olivier Ainambinina — Développeur Full-Stack Junior spécialisé en React, TypeScript, Java et PHP. Portfolio professionnel.">
-  <meta name="author" content="Johny Olivier Ainambinina">
-  <meta name="theme-color" content="#09090b">
-  <meta name="keywords" content="développeur, full-stack, portfolio, react, typescript, java, spring boot, php, laravel">
-  <meta property="og:title" content="Johny Olivier Ainambinina — Développeur Full-Stack">
-  <meta property="og:description" content="Portfolio professionnel d'un développeur full-stack junior passionné.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://johny-olivier.github.io">
-  <title>Johny Olivier Ainambinina — Développeur Full-Stack</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/bold/style.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body data-theme="dark">
-  <div class="noise" aria-hidden="true"></div>
-
-  <svg aria-hidden="true" class="svg-filters">
-    <defs>
-      <filter id="glass">
-        <feGaussianBlur in="SourceGraphic" stdDeviation="1" result="blur"/>
-        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.95 0"/>
-      </filter>
-      <filter id="glow">
-        <feGaussianBlur stdDeviation="4" result="blur"/>
-        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-      </filter>
-      <linearGradient id="hero-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="var(--accent)"/>
-        <stop offset="50%" stop-color="var(--fg)"/>
-        <stop offset="100%" stop-color="var(--accent)"/>
-      </linearGradient>
-    </defs>
-  </svg>
-
-  <a href="#main" class="skip-link">Aller au contenu principal</a>
-
-  <nav class="navbar" id="navbar" role="navigation" aria-label="Navigation principale">
-    <div class="container">
-      <a class="navbar-brand" href="#home">JA</a>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
-        <i class="ph ph-list"></i>
-      </button>
-      <ul class="nav-links" id="navLinks" role="list"></ul>
-    </div>
-  </nav>
-
-  <main id="main">
-    <section id="home" class="hero">
-      <canvas class="mesh-canvas" id="meshCanvas" aria-hidden="true"></canvas>
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-content">
-            <div class="hero-badge">
-              <i class="ph ph-code"></i>
-              <span>Disponible pour des opportunités</span>
-            </div>
-            <h1 class="hero-name" id="heroName"></h1>
-            <p class="hero-subtitle" id="heroTitle"></p>
-            <p class="hero-description" id="heroIntro"></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Johny Olivier, développeur full-stack junior à Antananarivo. Découvrez mes projets web et Java, mes compétences et mon parcours à IT University."
+    />
+    <meta name="theme-color" content="#f7f7f2" />
+    <meta
+      property="og:title"
+      content="Johny Olivier — Développeur full-stack junior"
+    />
+    <meta
+      property="og:description"
+      content="Du code au concret. Projets, compétences et parcours d’un développeur à Antananarivo."
+    />
+    <meta property="og:type" content="website" />
+    <title>Johny Olivier — Développeur full-stack junior</title>
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="assets/js/data.js" defer></script>
+    <script src="assets/js/knowledge.js" defer></script>
+    <script src="assets/js/config.js" defer></script>
+    <script src="assets/js/assistant.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Aller au contenu</a>
+    <header class="header">
+      <div class="header-inner wrap">
+        <a href="#home" class="wordmark" aria-label="Johny Olivier, accueil"
+          ><span class="monogram">jo.</span
+          ><span>Johny Olivier<small>Développeur full-stack</small></span></a
+        >
+        <nav aria-label="Navigation principale" id="navigation">
+          <a href="#projects">Projets</a><a href="#skills">Compétences</a
+          ><a href="#experience">Parcours</a
+          ><a href="#contact" class="nav-contact">Me contacter</a>
+        </nav>
+        <button
+          class="menu-toggle"
+          aria-expanded="false"
+          aria-controls="navigation"
+        >
+          <span>Menu</span
+          ><img
+            class="icon"
+            src="assets/icons/menu.png"
+            width="20"
+            height="20"
+            alt=""
+          />
+        </button>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero wrap" id="home" aria-labelledby="hero-heading">
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <span class="eyebrow"
+              ><span class="status-dot"></span> DÉVELOPPEUR FULL-STACK
+              JUNIOR</span
+            >
+            <h1 id="hero-heading">
+              Johny Olivier.<br /><em>Du code au concret.</em>
+            </h1>
+            <p class="hero-description">
+              Je développe des applications web et des outils en PHP, Java et
+              JavaScript. J’aime comprendre comment les choses fonctionnent,
+              puis leur donner vie.
+            </p>
             <div class="hero-actions">
-              <a href="#projects" class="btn btn-primary">
-                Voir mes projets <i class="ph ph-arrow-right"></i>
-              </a>
-              <a href="cv_ainambinina_johny_olivier.pdf" class="btn btn-ghost" download>
-                <i class="ph ph-download"></i> CV
-              </a>
-              <a href="#contact" class="btn btn-ghost">
-                <i class="ph ph-envelope"></i> Contact
-              </a>
+              <a href="#projects" class="button primary"
+                >Découvrir mes projets
+                <img
+                  class="icon"
+                  src="assets/icons/arrow-right.png"
+                  width="20"
+                  height="20"
+                  alt="" /></a
+              ><a
+                href="cv_ainambinina_johny_olivier.pdf"
+                class="button secondary"
+                download
+                ><img
+                  class="icon"
+                  src="assets/icons/download.png"
+                  width="19"
+                  height="19"
+                  alt=""
+                />
+                Télécharger mon CV</a
+              >
+            </div>
+            <div class="hero-facts">
+              <span
+                ><img
+                  class="icon"
+                  src="assets/icons/location.png"
+                  width="16"
+                  height="16"
+                  alt=""
+                />
+                Antananarivo, Madagascar</span
+              ><span
+                ><img
+                  class="icon"
+                  src="assets/icons/graduation.png"
+                  width="18"
+                  height="18"
+                  alt=""
+                />
+                Licence 3 · IT University</span
+              >
             </div>
           </div>
-          <div class="hero-visual">
-            <div class="profile-frame">
-              <img src="assets/images/johny.jpg" alt="Johny Olivier Ainambinina" class="profile-img" loading="eager" width="400" height="533">
-              <div class="profile-ring" aria-hidden="true">
-                <svg viewBox="0 0 100 100" class="ring-svg">
-                  <defs>
-                    <path id="ring-path" d="M 50,50 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0"/>
-                  </defs>
-                  <text class="ring-text">
-                    <textPath href="#ring-path" startOffset="0%"> Full-Stack Junior · JS · Java · Spring Boot · PHP · Laravel · </textPath>
-                  </text>
-                </svg>
+          <div class="hero-aside">
+            <figure class="portrait">
+              <div class="portrait-label">
+                <span>LE VISAGE DERRIÈRE LE CODE</span><span>JO / 01</span>
               </div>
-            </div>
+              <img
+                src="assets/images/johny.jpg"
+                alt="Portrait de Johny Olivier"
+                width="2918"
+                height="2662"
+                fetchpriority="high"
+              />
+              <figcaption>
+                <span>Johny Olivier<small>Curiosité en continu.</small></span
+                ><span class="portrait-signature" aria-hidden="true">jo.</span>
+              </figcaption>
+            </figure>
           </div>
         </div>
-      </div>
-      <div class="scroll-hint">
-        <span>Défiler</span>
-        <i class="ph ph-arrow-down"></i>
-      </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">À propos</div>
-          <h2 class="section-title">Qui suis-je ?</h2>
-        </div>
-        <div class="about-grid">
+        <div class="intro-bar">
           <div>
-            <p class="about-text reveal" id="aboutShortBio"></p>
-            <p class="about-text reveal">Mon approche combine rigueur technique et curiosité créative. Je suis un apprenant rapide, toujours enthousiaste pour explorer de nouvelles technologies et contribuer à des projets concrets.</p>
-            <p class="about-text reveal" id="aboutInterests"></p>
+            <span class="eyebrow">MON FIL CONDUCTEUR</span>
+            <p>Comprendre. Construire. Progresser.</p>
           </div>
+          <button class="ask-card" data-open-chat>
+            <span class="icon-tile"
+              ><img
+                class="icon"
+                src="assets/icons/chat.png"
+                width="22"
+                height="22"
+                alt="" /></span
+            ><span
+              ><strong>Une question sur mon profil ?</strong
+              ><small
+                >Mon assistant vous guide vers la bonne information.</small
+              ></span
+            ><img
+              class="icon"
+              src="assets/icons/arrow-right.png"
+              width="20"
+              height="20"
+              alt=""
+            />
+          </button>
+        </div>
+      </section>
+      <section
+        id="projects"
+        class="projects-section section-pad"
+        aria-labelledby="projects-heading"
+      >
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow section-label">01 / PROJETS</span>
+              <h2 id="projects-heading">Des projets, des usages concrets.</h2>
+              <p>
+                Une sélection de mon travail. Explorez un domaine ou retrouvez
+                une technologie.
+              </p>
+            </div>
+            <a
+              href="https://github.com/Johny-olivier"
+              class="text-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><img
+                class="icon"
+                src="assets/icons/github.png"
+                width="20"
+                height="20"
+                alt=""
+              />
+              Mon GitHub</a
+            >
+          </div>
+          <div class="project-toolbar">
+            <div class="filters" role="group" aria-label="Filtrer les projets">
+              <button data-filter="featured" aria-pressed="true">
+                Sélection</button
+              ><button data-filter="all" aria-pressed="false">
+                Tous <span id="all-projects-count"></span></button
+              ><button data-filter="web" aria-pressed="false">Web</button
+              ><button data-filter="systeme" aria-pressed="false">
+                Java & desktop</button
+              ><button data-filter="ia" aria-pressed="false">
+                IA & outils
+              </button>
+            </div>
+            <label class="project-search"
+              ><img
+                class="icon"
+                src="assets/icons/search.png"
+                width="18"
+                height="18"
+                alt="" /><span class="sr-only"
+                >Rechercher un projet ou une technologie</span
+              ><input
+                id="project-search"
+                type="search"
+                placeholder="Nom, technologie…"
+                autocomplete="off"
+            /></label>
+          </div>
+          <div class="project-results">
+            <span id="project-count" role="status" aria-live="polite"></span
+            ><span>Projets personnels & explorations techniques</span>
+          </div>
+          <div class="projects-grid" id="projects-container"></div>
+          <div class="empty-state" id="projects-empty" hidden>
+            <h3>Aucun projet ne correspond.</h3>
+            <p>Essayez une autre technologie ou affichez tous les projets.</p>
+            <button class="button secondary" id="clear-project-search">
+              Réinitialiser la recherche
+            </button>
+          </div>
+          <div class="projects-bottom">
+            <p id="projects-selection-note">
+              Les détails et le code source sont accessibles depuis chaque
+              fiche.
+            </p>
+            <button class="button secondary" id="show-all-projects">
+              Voir tous les projets
+              <img
+                class="icon"
+                src="assets/icons/arrow-right.png"
+                width="18"
+                height="18"
+                alt=""
+              />
+            </button>
+          </div>
+        </div>
+      </section>
+      <section
+        id="skills"
+        class="skills-section section-pad"
+        aria-labelledby="skills-heading"
+      >
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow section-label">02 / COMPÉTENCES</span>
+              <h2 id="skills-heading">Ma boîte à outils.</h2>
+              <p>
+                Les technologies et concepts que j’utilise et approfondis au fil
+                des projets.
+              </p>
+            </div>
+            <a
+              href="cv_ainambinina_johny_olivier.pdf"
+              class="text-link"
+              download
+              >Consulter mon CV
+              <img
+                class="icon"
+                src="assets/icons/download.png"
+                width="18"
+                height="18"
+                alt=""
+            /></a>
+          </div>
+          <div id="skills-container" class="skills-grid"></div>
+        </div>
+      </section>
+      <section
+        id="about"
+        class="about-section section-pad wrap"
+        aria-labelledby="about-heading"
+      >
+        <div class="about-title">
+          <span class="eyebrow section-label">03 / À PROPOS</span>
+          <h2 id="about-heading">Apprendre, puis<br />mettre en pratique.</h2>
+          <p>
+            Un parcours qui se construit aussi bien en cours qu’au travers de
+            projets personnels.
+          </p>
+        </div>
+        <div class="about-copy">
+          <p class="large-copy" id="profile-intro"></p>
+          <p id="profile-goal"></p>
+          <div class="personal-details">
+            <div>
+              <h3>En dehors du code</h3>
+              <p id="interests"></p>
+            </div>
+            <div>
+              <h3>Langues</h3>
+              <ul id="languages"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="experience"
+        class="journey-section section-pad"
+        aria-labelledby="journey-heading"
+      >
+        <div class="wrap">
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow section-label">04 / PARCOURS</span>
+              <h2 id="journey-heading">Formation & expérience.</h2>
+              <p>Les étapes qui nourrissent ma pratique du développement.</p>
+            </div>
+          </div>
+          <div class="journey-grid">
+            <div>
+              <h3 class="journey-column-title">
+                <img
+                  class="icon"
+                  src="assets/icons/briefcase.png"
+                  width="22"
+                  height="22"
+                  alt=""
+                />
+                Expérience & concours
+              </h3>
+              <div id="experience-container"></div>
+            </div>
+            <div id="education">
+              <h3 class="journey-column-title">
+                <img
+                  class="icon"
+                  src="assets/icons/graduation.png"
+                  width="24"
+                  height="24"
+                  alt=""
+                />
+                Formation
+              </h3>
+              <div id="education-container"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="contact"
+        class="contact-section section-pad wrap"
+        aria-labelledby="contact-heading"
+      >
+        <div class="contact-panel">
           <div>
-            <div class="stats-grid reveal" id="statsContainer"></div>
+            <span class="eyebrow section-label">05 / CONTACT</span>
+            <h2 id="contact-heading">Parlons de la suite.</h2>
+            <p>
+              Une opportunité, un projet ou une question ?<br />Je serai heureux
+              d’en discuter avec vous.
+            </p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="section skills-section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Compétences</div>
-          <h2 class="section-title">Stack technique</h2>
-        </div>
-        <div class="skills-grid" id="skillsContainer"></div>
-      </div>
-    </section>
-
-    <section id="education" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Formation</div>
-          <h2 class="section-title">Parcours académique</h2>
-        </div>
-        <div class="timeline" id="educationContainer"></div>
-      </div>
-    </section>
-
-    <section id="experience" class="section experience-section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Expérience</div>
-          <h2 class="section-title">Expérience professionnelle</h2>
-        </div>
-        <div class="exp-list" id="experienceContainer"></div>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Projets</div>
-          <h2 class="section-title">Projets sélectionnés</h2>
-        </div>
-        <div class="projects-grid" id="projectsContainer"></div>
-        <div class="github-cta reveal">
-          <div class="github-cta-body">
-            <div class="github-cta-icon">
-              <i class="ph ph-github-logo"></i>
+          <div class="contact-actions">
+            <a id="contact-email" class="contact-email"></a>
+            <p id="contact-phones" class="contact-phones"></p>
+            <div class="contact-links">
+              <a
+                href="https://github.com/Johny-olivier"
+                class="button secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><img
+                  class="icon"
+                  src="assets/icons/github.png"
+                  width="20"
+                  height="20"
+                  alt=""
+                />
+                GitHub</a
+              ><button class="button secondary" data-open-chat>
+                <img
+                  class="icon"
+                  src="assets/icons/chat.png"
+                  width="20"
+                  height="20"
+                  alt=""
+                />
+                Poser une question
+              </button>
             </div>
-            <div class="github-cta-text">
-              <h3>Tous mes projets sur GitHub</h3>
-              <p>Découvrez l'ensemble de mes projets, contributions et expérimentations.</p>
-            </div>
-            <a href="#" class="btn btn-ghost github-link" target="_blank">
-              <i class="ph ph-github-logo"></i> Voir le profil
-            </a>
+          </div>
+        </div>
+      </section>
+      <noscript
+        ><p class="wrap">
+          Activez JavaScript pour explorer les projets et utiliser l’assistant,
+          ou
+          <a href="cv_ainambinina_johny_olivier.pdf">consultez mon CV complet</a
+          >.
+        </p></noscript
+      >
+    </main>
+    <footer class="footer wrap">
+      <span>© <span id="year">2026</span> Johny Olivier</span>
+      <div>
+        <span>Antananarivo, Madagascar</span
+        ><a href="https://icons8.com" target="_blank" rel="noopener noreferrer"
+          >Icônes par Icons8</a
+        ><a href="#home" class="back-top"
+          >Retour en haut
+          <img
+            class="icon"
+            src="assets/icons/arrow-up.png"
+            width="16"
+            height="16"
+            alt=""
+        /></a>
+      </div>
+    </footer>
+    <button
+      class="chat-launcher"
+      data-open-chat
+      aria-haspopup="dialog"
+      aria-controls="chat-dialog"
+    >
+      <img
+        class="icon"
+        src="assets/icons/chat.png"
+        width="22"
+        height="22"
+        alt=""
+      /><span>Une question ?</span>
+    </button>
+    <dialog id="chat-dialog" aria-labelledby="chat-title">
+      <div class="chat-header">
+        <span class="icon-tile"
+          ><img
+            class="icon"
+            src="assets/icons/chat.png"
+            width="22"
+            height="22"
+            alt=""
+        /></span>
+        <div>
+          <h2 id="chat-title">L’assistant de Johny</h2>
+          <p>Projets, compétences & parcours</p>
+        </div>
+        <button
+          id="chat-close"
+          class="icon-button"
+          aria-label="Fermer l’assistant"
+        >
+          <img
+            class="icon"
+            src="assets/icons/close.png"
+            width="17"
+            height="17"
+            alt=""
+          />
+        </button>
+      </div>
+      <div
+        class="chat-messages"
+        id="chat-messages"
+        role="log"
+        aria-live="polite"
+        aria-relevant="additions"
+      >
+        <div class="message assistant-message welcome-message">
+          <span class="message-author">L’assistant de Johny</span>
+          <h3>Que souhaitez-vous savoir ?</h3>
+          <p>
+            Je vous aide à trouver l’essentiel sur Johny et vous indique où le
+            retrouver dans le portfolio.
+          </p>
+          <div class="welcome-topics">
+            <span>Compétences</span><span>Projets</span><span>Parcours</span>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="contact" class="section contact-section">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-label">Contact</div>
-          <h2 class="section-title">Travaillons ensemble</h2>
-        </div>
-        <div class="contact-layout">
-          <div class="contact-intro">
-            <p>Je suis à l'écoute de nouvelles opportunités et collaborations. N'hésitez pas à m'écrire pour discuter de vos projets, idées ou opportunités professionnelles.</p>
-          </div>
-          <div class="contact-list" id="contactContainer"></div>
-        </div>
+      <div class="chat-suggestions" aria-label="Suggestions de questions">
+        <button data-question="Quelles sont ses compétences ?">
+          Ses compétences</button
+        ><button data-question="Parle-moi de Family Private">
+          Family Private</button
+        ><button data-question="Quelle est son expérience ?">
+          Son expérience
+        </button>
       </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <p>&copy; 2025 <span id="footerName"></span>. Tous droits réservés.</p>
-        <p class="footer-location"><i class="ph ph-map-pin"></i> <span id="footerLocation"></span></p>
+      <form id="chat-form">
+        <label for="chat-input">Votre question sur Johny</label>
+        <div class="chat-input-row">
+          <input
+            id="chat-input"
+            name="question"
+            autocomplete="off"
+            maxlength="500"
+            placeholder="Un projet, une technologie, son parcours…"
+            required
+          /><button
+            type="submit"
+            class="icon-button"
+            aria-label="Envoyer la question"
+          >
+            <img
+              class="icon"
+              src="assets/icons/send.png"
+              width="20"
+              height="20"
+              alt=""
+            />
+          </button>
+        </div>
+      </form>
+      <div class="chat-bottom">
+        <details class="chat-privacy">
+          <summary>À propos de l’assistant</summary>
+          <p id="chat-privacy-copy">
+            Réponses basées sur le profil et les projets publics de Johny. Vos
+            questions sont transmises au service IA configuré ; n’y indiquez pas
+            de données confidentielles.
+          </p>
+        </details>
+        <button id="chat-reset">Nouvelle conversation</button>
       </div>
-    </div>
-  </footer>
-
-  <script src="assets/js/data.js"></script>
-  <script src="assets/js/script.js"></script>
-</body>
+    </dialog>
+  </body>
 </html>
-
-

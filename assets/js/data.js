@@ -1,291 +1,391 @@
-const PERSONAL_INFO = {
-  firstName: 'Johny Olivier',
-  lastName: 'AINAMBININA',
-  title: 'Développeur Full-Stack & Fondateur ACOS',
-  introduction: 'Étudiant en informatique à ITU Andoharanofotsy, fondateur du concept ACOS (AI Company Operating System). Je conçois des architectures logicielles robustes et des solutions full-stack avec une approche industrialisée du développement assisté par IA.',
-  shortBio: 'Fondateur du concept ACOS (AI Company Operating System), étudiant en informatique à ITU Andoharanofotsy. Passionné par l\'architecture logicielle, le développement full-stack et l\'orchestration IA.',
-  interests: ['les jeux vidéo', 'le basketball', 'l\'intelligence artificielle'],
-  location: 'Antananarivo, Madagascar'
+/* Profil conservé depuis la version courante. Projets enrichis depuis les README GitHub publics le 10 septembre 2026. */
+const PROFILE = {
+  name: "Johny Olivier",
+  fullName: "AINAMBININA Johny Olivier",
+  title: "Développeur full-stack junior",
+  email: "ainambininajohnyolivier@gmail.com",
+  phones: ["038 32 197 87", "037 43 981 73"],
+  location: "Antananarivo, Madagascar",
+  github: "https://github.com/Johny-olivier",
+  intro:
+    "Étudiant en développement informatique à IT University, passionné par le développement web, curieux, rigoureux et orienté solution. Je cherche à contribuer à des projets concrets et à apprendre en continu.",
+  goal: "Je souhaite contribuer au développement d’applications web et renforcer ma pratique au sein d’une équipe technique.",
+  languages: [
+    "Français · courant",
+    "Anglais · intermédiaire",
+    "Malagasy · natif",
+  ],
+  interests: ["Jeux vidéo", "Basketball"],
 };
 
-const CONTACT_INFO = {
-  email: 'johny24.poseidon@gmail.com',
-  phone: '038 32 197 87',
-  phone2: '037 43 981 73',
-  github: 'https://github.com/Johny-olivier',
-  facebook: 'https://www.facebook.com/lion.johny.9',
-  linkedin: 'https://www.linkedin.com/in/johny-olivier-ainambinina-2a6b25343/'
-};
-
-const STATISTICS = [
-  { number: '25+', label: 'Projets réalisés' },
-  { number: '15+', label: 'Technologies maîtrisées' },
-  { number: '3+', label: "Années d'expérience" },
-  { number: '1', label: 'Concept ACOS fondé' }
-];
-
-const SKILLS_FRONTEND = [
-  { name: 'HTML5', icon: 'ph ph-code', level: 'avancé' },
-  { name: 'CSS3', icon: 'ph ph-palette', level: 'avancé' },
-  { name: 'JavaScript', icon: 'ph ph-code-block', level: 'avancé' },
-  { name: 'TypeScript', icon: 'ph ph-brackets-curly', level: 'intermédiaire' },
-  { name: 'React', icon: 'ph ph-atom', level: 'intermédiaire' },
-  { name: 'Next.js', icon: 'ph ph-lightning', level: 'intermédiaire' },
-  { name: 'Tailwind CSS', icon: 'ph ph-wind', level: 'intermédiaire' },
-  { name: 'Bootstrap', icon: 'ph ph-columns', level: 'intermédiaire' },
-];
-
-const SKILLS_BACKEND = [
-  { name: 'PHP', icon: 'ph ph-code', level: 'avancé' },
-  { name: 'Laravel', icon: 'ph ph-lightning', level: 'intermédiaire' },
-  { name: 'Java', icon: 'ph ph-coffee', level: 'avancé' },
-  { name: 'Spring Boot', icon: 'ph ph-flower', level: 'intermédiaire' },
-  { name: 'Node.js', icon: 'ph ph-code', level: 'intermédiaire' },
-  { name: 'Python', icon: 'ph ph-terminal', level: 'intermédiaire' },
-  { name: 'FastAPI', icon: 'ph ph-lightning', level: 'intermédiaire' },
-  { name: 'Express', icon: 'ph ph-server', level: 'intermédiaire' },
-  { name: 'C', icon: 'ph ph-copyright', level: 'intermédiaire' },
-];
-
-const SKILLS_ARCHITECTURE = [
-  { name: 'MVC', icon: 'ph ph-share-network', level: 'avancé' },
-  { name: 'DAO', icon: 'ph ph-stack', level: 'avancé' },
-  { name: 'DDD', icon: 'ph ph-cube', level: 'intermédiaire' },
-  { name: 'Client-Serveur', icon: 'ph ph-network', level: 'avancé' },
-  { name: 'REST API', icon: 'ph ph-cube', level: 'intermédiaire' },
-  { name: 'ECS', icon: 'ph ph-shapes', level: 'intermédiaire' },
-  { name: 'POO avancée', icon: 'ph ph-shapes', level: 'avancé' }
-];
-
-const SKILLS_DATABASES = [
-  { name: 'MySQL', icon: 'ph ph-database', level: 'avancé' },
-  { name: 'PostgreSQL', icon: 'ph ph-database', level: 'intermédiaire' },
-  { name: 'SQLite', icon: 'ph ph-database', level: 'intermédiaire' },
-  { name: 'Oracle', icon: 'ph ph-database', level: 'intermédiaire' },
-  { name: 'SQL Server', icon: 'ph ph-database', level: 'intermédiaire' },
-  { name: 'Prisma', icon: 'ph ph-database', level: 'débutant' },
-];
-
-const SKILLS_AI = [
-  { name: 'Ollama', icon: 'ph ph-robot', level: 'avancé' },
-  { name: 'LLM', icon: 'ph ph-brain', level: 'intermédiaire' },
-  { name: 'Prompt Engineering', icon: 'ph ph-chats', level: 'avancé' },
-  { name: 'MCP', icon: 'ph ph-plugs', level: 'intermédiaire' },
-  { name: 'ACOS', icon: 'ph ph-lightbulb', level: 'avancé' },
-  { name: 'Tauri', icon: 'ph ph-window', level: 'débutant' },
-];
-
-const SKILLS_TOOLS = [
-  { name: 'Git', icon: 'ph ph-git-branch', level: 'avancé' },
-  { name: 'GitHub', icon: 'ph ph-github-logo', level: 'avancé' },
-  { name: 'Docker', icon: 'ph ph-shipping-container', level: 'intermédiaire' },
-  { name: 'Maven', icon: 'ph ph-package', level: 'avancé' },
-  { name: 'Linux', icon: 'ph ph-terminal-window', level: 'avancé' },
-  { name: 'Bash', icon: 'ph ph-scroll', level: 'intermédiaire' },
-  { name: 'Figma', icon: 'ph ph-figma-logo', level: 'débutant' },
-];
-
-const EDUCATION = [
+const SKILLS = [
   {
-    title: 'Licence en Informatique (En cours)',
-    institution: 'IT University Andoharanofotsy',
-    period: 'Oct. 2024 – Présent',
-    description: 'L2 Computer Science — Spécialisation en développement web et architecture logicielle.',
-    icon: 'ph ph-graduation-cap'
-  },
-  {
-    title: 'Année Préparatoire',
-    institution: 'Programme SESAME Ambatoroka',
-    period: '2023 – 2024',
-    description: "Préparation intensive pour études d'ingénieur informatique.",
-    icon: 'ph ph-graduation-cap'
-  },
-  {
-    title: 'Terminale Série S (Mention Bien)',
-    institution: 'CIC Mananjary',
-    period: '2022 – 2023',
-    description: 'Baccalauréat série scientifique avec distinction.',
-    icon: 'ph ph-graduation-cap'
-  }
-];
-
-const EXPERIENCE = [
-  {
-    title: 'Fondateur & CEO — Concept ACOS',
-    company: 'AI Company Operating System',
-    period: '2026 – Présent',
-    description: 'Création et développement du concept ACOS, un système d\'exploitation conceptuel pour entreprises IA.',
-    tasks: [
-      'Conception d\'un framework standardisé pour orchestrer le développement assisté par IA',
-      'Définition de 8 documents fondateurs (architecture, processus, standards, templates)',
-      'Développement d\'ACOS-O, l\'orchestrateur qui implémente le concept ACOS dans son propre développement',
-      'Architecture DDD avec backend Express/SQLite et frontend React/Zustand'
-    ]
-  },
-  {
-    title: 'Hackathon ITU Website Redesign',
-    company: 'ITU Andoharanofotsy',
-    period: 'Fev. 2026',
-    description: 'Redesign complet du site web de l\'école lors d\'un hackathon interne.',
-    tasks: [
-      'Refonte complète de l\'architecture et de l\'interface utilisateur',
-      'Amélioration de l\'expérience utilisateur (UX) et de la navigation',
-      'Projet disponible sur GitHub'
+    id: "backend",
+    title: "Backend",
+    level: "Backend",
+    description: "La logique, l'architecture et les données.",
+    items: [
+      "PHP",
+      "Laravel",
+      "Java",
+      "Node.js",
+      "FlightPHP",
+      "CodeIgniter",
+      "Spring",
+      "Spring Boot",
+      "Python",
     ],
-    link: 'https://github.com/Johny-olivier/itu-website-redesign'
+    icon: "code",
   },
   {
-    title: 'Hackathon CodinGame / Orange',
-    company: 'CodinGame × Orange',
-    period: 'Déc. 2025',
-    description: 'Participation au Hackathon national de coding contest.',
-    tasks: [
-      'Résolution de problèmes algorithmiques complexes sous contrainte de temps',
-      'Optimisation avancée des performances (Coding Contest)',
-      'Classement compétitif parmi les participants'
-    ]
+    id: "frontend",
+    title: "Frontend",
+    level: "Frontend",
+    description: "L'interface, le rendu et l'expérience utilisateur.",
+    items: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "React",
+      "Angular",
+      "TypeScript",
+      "Bootstrap",
+      "Tailwind",
+    ],
+    icon: "monitor",
   },
   {
-    title: 'Stagiaire Développeur WordPress',
-    company: 'Mada Creative Agency',
-    period: 'Juin – Nov 2024',
-    description: 'Stagiaire développeur WordPress avec responsabilités multiples.',
-    tasks: [
-      'Intégration et personnalisation HTML/CSS de thèmes WordPress',
-      'Optimisation SEO et gestion de contenu',
-      'Développement de solutions web personnalisées'
-    ]
-  }
+    id: "architecture",
+    title: "Architecture & Concepts",
+    level: "Architecture & Concepts",
+    description: "Patrons de conception et bonnes pratiques.",
+    items: [
+      "MVC",
+      "DAO",
+      "Client-Serveur",
+      "REST API",
+      "Authentification",
+      "POO avancée",
+    ],
+    icon: "layers",
+  },
+  {
+    id: "databases",
+    title: "Bases de Données",
+    level: "Bases de Données",
+    description: "Stockage et persistance.",
+    items: ["MySQL", "Oracle", "PostgreSQL", "SQLite", "Microsoft SQL Server"],
+    icon: "layers",
+  },
+  {
+    id: "outils",
+    title: "Outils, Systèmes & IA",
+    level: "Outils, Systèmes & IA",
+    description: "Environnement de développement et IA.",
+    items: [
+      "Git",
+      "Docker",
+      "Maven",
+      "Tomcat",
+      "XAMPP",
+      "DBeaver",
+      "FileZilla",
+      "Linux (Ubuntu)",
+      "Windows 11",
+      "Opencode",
+      "Gemini CLI",
+      "Codex CLI",
+      "Cline",
+      "Ollama",
+    ],
+    icon: "code",
+  },
 ];
 
 const PROJECTS = [
   {
-    id: 1,
-    title: 'ACOS — AI Company Operating System',
-    description: "Système d'exploitation conceptuel pour entreprises IA. Framework standardisé pour orchestrer le développement assisté par IA avec une hiérarchie CEO → Architectes → Développeurs IA.",
-    stack: ['Concept', 'Architecture', 'Documentation', 'Standards'],
-    github: 'https://github.com/Johny-olivier/acos',
-    featured: true
+    id: "family-private",
+    name: "Family Private",
+    category: "web",
+    type: "Réseau social privé",
+    featured: true,
+    description:
+      "Un espace familial pour échanger, publier des photos et garder ses conversations privées.",
+    detail:
+      "Application en PHP natif organisée en MVC, avec publications, réactions, galerie multimédia et administration.",
+    features: [
+      "Comptes et authentification avec Argon2ID",
+      "Discussions privées avec PIN et chiffrement AES-256-GCM",
+      "Publications, commentaires et galerie multimédia",
+    ],
+    stack: ["PHP", "MySQL", "JavaScript", "MVC"],
+    icon: "code",
+    tone: "sage",
+    assisted: false,
+    github: "https://github.com/Johny-olivier/family-private",
+    source: "https://github.com/Johny-olivier/family-private#readme",
+    label: "Réseau social privé",
   },
   {
-    id: 2,
-    title: 'ACOS Orchestrator (ACOS-O)',
-    description: "Application web locale qui automatise l'exploitation d'ACOS. Implémente le concept ACOS dans son propre développement. Architecture DDD avec file watching, SSE et gestion de tâches IA.",
-    stack: ['TypeScript', 'React', 'Express', 'SQLite', 'Zustand', 'TailwindCSS'],
-    github: 'https://github.com/Johny-olivier/acos-orchestrator',
-    featured: true
+    id: "pc-monitor",
+    name: "PC Monitor",
+    category: "systeme",
+    type: "Application client-serveur",
+    featured: true,
+    description:
+      "Surveiller à distance les ressources d’un ordinateur depuis une interface Java.",
+    detail:
+      "Un serveur collecte les données du système et un client les affiche dans une interface Swing ou en ligne de commande.",
+    features: [
+      "Suivi du CPU, de la mémoire, des disques et du réseau",
+      "Découverte des serveurs sur le réseau local",
+      "Consultation et gestion des processus à distance",
+    ],
+    stack: ["Java", "Maven", "Swing", "Sockets TCP"],
+    icon: "monitor",
+    tone: "sand",
+    assisted: false,
+    github: "https://github.com/Johny-olivier/pc-monitor",
+    source: "https://github.com/Johny-olivier/pc-monitor#readme",
+    label: "Application client-serveur",
   },
   {
-    id: 3,
-    title: 'Local AI Agent',
-    description: "Assistant IA 100 % local avec accès système complet. Shell interactif, lecture de documents, mémoire sémantique, recherche web. Application desktop native Tauri.",
-    stack: ['Python', 'FastAPI', 'Next.js', 'Tauri', 'Ollama', 'LLM'],
-    github: 'https://github.com/Johny-olivier/local-ai-agent',
-    featured: true
+    id: "local-ai-agent",
+    name: "Local AI Agent",
+    category: "ia",
+    type: "Assistant IA local",
+    featured: true,
+    description:
+      "Interagir avec ses documents et ses outils grâce à des modèles exécutés avec Ollama.",
+    detail:
+      "Assistant local pour Linux, avec interface web et fenêtre de bureau Tauri. Projet personnel réalisé avec l’assistance d’outils d’IA.",
+    features: [
+      "Lecture de documents et mémoire des échanges",
+      "Connexion à des outils MCP",
+      "Interface de bureau et gestion de modèles Ollama",
+    ],
+    stack: ["Python", "FastAPI", "Next.js", "Tauri", "Ollama"],
+    icon: "chat",
+    tone: "lilac",
+    assisted: true,
+    github: "https://github.com/Johny-olivier/local-ai-agent",
+    source: "https://github.com/Johny-olivier/local-ai-agent#readme",
+    label: "Assistant IA local · Assisté par IA",
   },
   {
-    id: 4,
-    title: 'Contra 1990 Remake',
-    description: "Remake complet du jeu légendaire Contra avec architecture ECS. 8 niveaux, 8 boss, système d'armes, particules, animations et audio. Moteur de jeu écrit de zéro.",
-    stack: ['Python', 'Pygame', 'ECS', 'Game Engine'],
-    github: 'https://github.com/Johny-olivier/contra-1990-remake',
-    featured: true
+    id: "schedule-handler",
+    name: "Schedule Handler",
+    category: "web",
+    type: "Gestion d’emploi du temps",
+    featured: true,
+    description:
+      "Organiser ses activités avec des horaires précis et une gestion simple du planning.",
+    detail:
+      "Application web de gestion d’emploi du temps. Le README documente une installation PHP et MySQL et le stockage des activités avec heures de début et de fin.",
+    features: [
+      "Organisation des activités par créneaux horaires",
+      "Gestion des horaires de début et de fin",
+      "Stockage des plannings en base MySQL",
+    ],
+    stack: ["PHP", "MySQL", "JavaScript"],
+    icon: "layers",
+    tone: "sand",
+    assisted: null,
+    github: "https://github.com/Johny-olivier/schedule-handler",
+    source: "https://github.com/Johny-olivier/schedule-handler#readme",
+    label: "Gestion d’emploi du temps",
   },
   {
-    id: 5,
-    title: 'Facebook Clone',
-    description: "Clone fonctionnel de Facebook avec API REST complète, messagerie WebSocket temps réel, authentification SPA, fil d'actualités, stories et système d'amis.",
-    stack: ['Laravel', 'React', 'WebSocket', 'SQLite', 'Sanctum'],
-    github: 'https://github.com/Johny-olivier/facebook-clone',
-    featured: true
+    id: "mini-framework-java",
+    name: "Mini Framework Java",
+    category: "systeme",
+    type: "Exploration d’architecture",
+    featured: true,
+    description:
+      "Comprendre les fondations d’un framework en les construisant en Java.",
+    detail:
+      "Projet de framework Java développé à partir de zéro. Le dépôt annonce l’objectif d’explorer des fonctionnalités inspirées de Spring Boot, notamment un ORM ; il ne documente pas leur niveau d’achèvement.",
+    features: [
+      "Expérimentation autour de la conception d’un framework",
+      "Objectif annoncé : explorer des mécanismes de type ORM",
+    ],
+    stack: ["Java", "Architecture"],
+    icon: "code",
+    tone: "blue",
+    assisted: null,
+    github: "https://github.com/Johny-olivier/mini-framework-java",
+    source: "https://github.com/Johny-olivier/mini-framework-java#readme",
+    label: "Exploration d’architecture",
   },
   {
-    id: 6,
-    title: 'FootLive',
-    description: "Application de livescore football multi-compétitions en temps réel. Cache intelligent, agrégation de données depuis 2 API, support de 13 ligues internationales.",
-    stack: ['React', 'Node.js', 'Express', 'TailwindCSS', 'API'],
-    github: 'https://github.com/Johny-olivier/footlive',
-    featured: true
+    id: "footlive",
+    name: "FootLive",
+    category: "web",
+    type: "Scores & compétitions",
+    featured: true,
+    description:
+      "Retrouver les matchs, les résultats et les classements de plusieurs ligues de football.",
+    detail:
+      "Application de livescore multi-compétitions, avec frontend React et backend Node.js / Express. Projet réalisé avec l’assistance d’outils d’IA.",
+    features: [
+      "Matchs, classements et résultats multi-compétitions",
+      "Intégration de football-data.org et OpenLigaDB",
+      "Interface React et Tailwind CSS",
+    ],
+    stack: ["React", "Node.js", "Express", "Tailwind CSS"],
+    icon: "layers",
+    tone: "sage",
+    assisted: true,
+    github: "https://github.com/Johny-olivier/footlive",
+    source: "https://github.com/Johny-olivier/footlive#readme",
+    label: "Scores & compétitions · Assisté par IA",
   },
   {
-    id: 7,
-    title: 'Family Private',
-    description: "Réseau social familial privé avec chiffrement AES-256-GCM, authentification multi-facteurs, messagerie privée, galerie multimédia et backoffice administrateur.",
-    stack: ['PHP', 'MySQL', 'MVC', 'AES-256', 'JavaScript'],
-    github: 'https://github.com/Johny-olivier/family-private',
-    featured: true
+    id: "facebook-clone",
+    name: "Facebook Clone",
+    category: "web",
+    type: "Application sociale",
+    featured: false,
+    description:
+      "Explorer une application sociale avec authentification et échanges en temps réel.",
+    detail:
+      "Application full-stack avec une API Laravel et une interface React. Projet réalisé avec l’assistance d’outils d’IA.",
+    features: [
+      "Authentification SPA avec Sanctum",
+      "Temps réel avec Laravel Reverb et Echo",
+      "Frontend React et Vite, base SQLite",
+    ],
+    stack: ["Laravel", "React", "SQLite", "Reverb"],
+    icon: "code",
+    tone: "blue",
+    assisted: true,
+    github: "https://github.com/Johny-olivier/facebook-clone",
+    source: "https://github.com/Johny-olivier/facebook-clone#readme",
+    label: "Application sociale · Assisté par IA",
   },
   {
-    id: 8,
-    title: 'PC Monitor',
-    description: "Application client-serveur pour le monitoring en temps réel des performances système (CPU, RAM) via Sockets avec interface Swing.",
-    stack: ['Java', 'Sockets', 'Swing', 'Maven'],
-    github: 'https://github.com/Johny-olivier/pc-monitor',
-    featured: true
+    id: "acos-orchestrator",
+    name: "ACOS Orchestrator",
+    category: "ia",
+    type: "Organisation de projets IA",
+    featured: false,
+    description:
+      "Centraliser les tâches et le suivi de projets assistés par IA dans une application locale.",
+    detail:
+      "Application web locale avec un backend Node.js, une interface React et une base SQLite. Les documents et le code des projets restent dans leurs dossiers. Projet assisté par IA.",
+    features: [
+      "Gestion locale des tâches, statuts et assignations",
+      "Suivi des exécutions et des livrables",
+      "Documentation et code conservés sur le disque",
+    ],
+    stack: ["TypeScript", "React", "Node.js", "SQLite"],
+    icon: "layers",
+    tone: "lilac",
+    assisted: true,
+    github: "https://github.com/Johny-olivier/acos-orchestrator",
+    source: "https://github.com/Johny-olivier/acos-orchestrator#readme",
+    label: "Organisation de projets IA · Assisté par IA",
   },
   {
-    id: 9,
-    title: 'Mini Framework Java',
-    description: "Framework Java from scratch reproduisant les mécanismes essentiels de Spring Boot : ORM, injection de dépendances, servlet, déploiement automatisé. Projet démontrant une compréhension profonde du fonctionnement interne des frameworks.",
-    stack: ['Java', 'Maven', 'Servlet', 'ORM', 'Architecture'],
-    github: 'https://github.com/Johny-olivier/mini-framework-java',
-    featured: true
+    id: "contra-1990-remake",
+    name: "Contra 1990 Remake",
+    category: "systeme",
+    type: "Jeu vidéo",
+    featured: false,
+    description:
+      "Revisiter un classique du jeu vidéo avec une architecture ECS en Python.",
+    detail:
+      "Remake de Contra en Python et Pygame, organisé autour d’un moteur, d’entités, d’armes, de niveaux et de boss.",
+    features: [
+      "Architecture Entity Component System",
+      "Physique, collisions et animations",
+      "Effets visuels, particules et audio",
+    ],
+    stack: ["Python", "Pygame", "ECS"],
+    icon: "monitor",
+    tone: "sand",
+    assisted: false,
+    github: "https://github.com/Johny-olivier/contra-1990-remake",
+    source: "https://github.com/Johny-olivier/contra-1990-remake#readme",
+    label: "Jeu vidéo",
   },
   {
-    id: 10,
-    title: 'TrustMarket — Marketplace Intelligente',
-    description: "Marketplace connectant acheteurs et vendeurs avec un score de confiance dynamique, comparateur de prix intelligent, détection anti-arnaque et géolocalisation. Interface moderne avec TanStack Router, Cloudflare, shadcn/ui.",
-    stack: ['TypeScript', 'React', 'TanStack', 'Cloudflare', 'shadcn/ui', 'Framer'],
-    github: 'https://github.com/Johny-olivier/trust-connect-local',
-    featured: true
+    id: "acos",
+    name: "ACOS",
+    category: "ia",
+    type: "Méthode & documentation",
+    featured: false,
+    description:
+      "Structurer le travail entre un développeur et des agents IA spécialisés.",
+    detail:
+      "Projet personnel de documentation proposant des rôles, des contrats partagés et des conventions pour organiser le développement assisté par IA.",
+    features: [
+      "Définition de rôles et de périmètres de travail",
+      "Conventions techniques et documentation",
+      "Modèles de prompts et suivi des tâches",
+    ],
+    stack: ["Organisation", "Documentation", "IA"],
+    icon: "layers",
+    tone: "sage",
+    assisted: false,
+    github: "https://github.com/Johny-olivier/acos",
+    source: "https://github.com/Johny-olivier/acos#readme",
+    label: "Méthode & documentation",
   },
   {
-    id: 11,
-    title: 'Ravinala Crash — Jeu Éducatif',
-    description: "Jeu éducatif type crash game avec animation temps réel du multiplicateur, encaissement des gains, historique des parties et interface bilingue (FR/EN). API backend simulée, responsive design et architecture modulaire.",
-    stack: ['React 19', 'TypeScript', 'TailwindCSS', 'i18n', 'Vite'],
-    github: 'https://github.com/Johny-olivier/ravinala-crash-bolt',
-    featured: true
+    id: "mini-sgbd",
+    name: "Mini SGBD en Malagasy",
+    category: "systeme",
+    label: "Expérimentation Java",
+    description: "Algèbre relationnelle implémentée de zéro.",
+    detail:
+      "Moteur SQL simplifié en Malagasy (SELECT, INSERT, UPDATE, DELETE).",
+    stack: ["Java", "Algèbre relationnelle"],
+    symbol: "DB",
+    visual: "orchestrator",
+    assisted: null,
+    type: "Expérimentation Java",
+    featured: false,
+    icon: "layers",
+    tone: "blue",
+    github: null,
+    features: ["Algèbre relationnelle", "Commandes de données en Malagasy"],
   },
-  {
-    id: 12,
-    title: 'System Command Center',
-    description: "Dashboard de monitoring système complet avec authentification, WebSocket temps réel, visualisation CPU/RAM/disque/réseau/processus. Architecture modulaire avec TanStack Query, contextes d'authentification et WebSocket.",
-    stack: ['TypeScript', 'React', 'TanStack Query', 'WebSocket', 'shadcn/ui'],
-    github: 'https://github.com/Johny-olivier/system-command-center',
-    featured: true
-  },
-  {
-    id: 13,
-    title: 'SIG Madagascar',
-    description: "Système d'Information Géographique pour les routes de Madagascar. Visualisation spatiale et gestion de données géographiques.",
-    stack: ['Java', 'Maven', 'PostGIS', 'Docker'],
-    github: 'https://github.com/Johny-olivier/sig-madagascar',
-    featured: false
-  },
-  {
-    id: 14,
-    title: 'Interface Samba',
-    description: "Interface de gestion moderne pour serveur Samba, permettant de gérer les partages réseau et les utilisateurs.",
-    stack: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    github: 'https://github.com/Johny-olivier/interface-samba',
-    featured: false
-  },
-  {
-    id: 15,
-    title: 'Terrain ML Analysis',
-    description: "Analyse et prédiction de types de terrains via Machine Learning avec visualisation interactive sur carte.",
-    stack: ['Python', 'Scikit-learn', 'Pandas', 'Streamlit'],
-    github: 'https://github.com/Johny-olivier/terrain-ml-analysis',
-    featured: false
-  }
 ];
 
-const NAV_LINKS = [
-  { label: 'À propos', href: '#about' },
-  { label: 'Compétences', href: '#skills' },
-  { label: 'Parcours', href: '#education' },
-  { label: 'Expériences', href: '#experience' },
-  { label: 'Projets', href: '#projects' },
-  { label: 'Contact', href: '#contact' }
+const EDUCATION = [
+  {
+    date: "2024 — Aujourd’hui",
+    title: "Licence 3 en informatique",
+    place: "IT University · Andoharanofotsy",
+    detail: "En cours · Début en octobre 2024",
+  },
+  {
+    date: "2023 — 2024",
+    title: "Année préparatoire",
+    place: "Programme SESAME · Ambatoroka",
+    detail: "Préparation aux études supérieures",
+  },
+  {
+    date: "2022 — 2023",
+    title: "Baccalauréat · Série S",
+    place: "CIC Mananjary",
+    detail: "Mention Bien",
+  },
+];
+
+const EXPERIENCE = [
+  {
+    date: "Juin — Nov. 2024",
+    title: "Stagiaire développeur WordPress",
+    place: "Mada Creative Agency",
+    detail:
+      "Intégration et personnalisation de pages WordPress en HTML/CSS, adaptation responsive, optimisation SEO et gestion de contenu.",
+  },
+  {
+    date: "Décembre 2025",
+    title: "Hackathon CodinGame / Orange",
+    place: "Concours d’optimisation algorithmique",
+    detail: "Participation à un concours d’optimisation algorithmique.",
+  },
 ];

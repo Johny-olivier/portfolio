@@ -8,3 +8,11 @@ dist/
 build/
 push_script.sh
 parle-nous-de-toi.txt
+
+# Cloudflare local state and credentials
+.wrangler/
+worker/.wrangler/
+.dev.vars
+.dev.vars.*
+.env
+.env.*
