@@ -27,8 +27,15 @@ const SKILLS = [
     icon: "code",
     niveaux: {
       avance: ["PHP", "Java"],
-      intermediaire: ["Laravel", "FlightPHP", "CodeIgniter", "Node.js"],
-      debutant: ["Spring", "Spring Boot", "Python"],
+      intermediaire: [
+        "Laravel",
+        "FlightPHP",
+        "CodeIgniter",
+        "Spring",
+        "Spring Boot",
+        "Python",
+      ],
+      debutant: ["Node.js"],
     },
   },
   {
@@ -39,8 +46,8 @@ const SKILLS = [
     icon: "monitor",
     niveaux: {
       avance: ["HTML5", "CSS3", "JavaScript"],
-      intermediaire: ["Bootstrap", "Tailwind"],
-      debutant: ["React", "Angular", "TypeScript"],
+      intermediaire: ["Bootstrap"],
+      debutant: ["React", "Angular", "TypeScript", "Tailwind"],
     },
   },
   {
@@ -50,9 +57,9 @@ const SKILLS = [
     description: "Patrons de conception et bonnes pratiques.",
     icon: "layers",
     niveaux: {
-      avance: ["MVC", "POO avancée"],
-      intermediaire: ["REST API", "Authentification"],
-      debutant: ["DAO", "Client-Serveur"],
+      avance: ["MVC", "POO avancée", "REST API", "Client-Serveur"],
+      intermediaire: ["Authentification"],
+      debutant: ["DAO"],
     },
   },
   {
@@ -63,7 +70,7 @@ const SKILLS = [
     icon: "layers",
     niveaux: {
       avance: ["MySQL"],
-      intermediaire: ["SQLite", "PostgreSQL"],
+      intermediaire: ["PostgreSQL", "SQLite"],
       debutant: ["Oracle", "Microsoft SQL Server"],
     },
   },
@@ -74,9 +81,9 @@ const SKILLS = [
     description: "Environnement de développement et IA.",
     icon: "code",
     niveaux: {
-      avance: ["Git", "Linux (Ubuntu)", "Windows 11", "XAMPP"],
-      intermediaire: ["Docker", "Maven", "Tomcat", "DBeaver", "FileZilla"],
-      debutant: ["Opencode", "Gemini CLI", "Codex CLI", "Cline", "Ollama"],
+      avance: ["XAMPP", "Tomcat", "Opencode", "Gemini CLI", "Codex CLI"],
+      intermediaire: ["Git", "Docker", "Maven", "Linux (Ubuntu)"],
+      debutant: ["DBeaver", "FileZilla", "Windows 11", "Cline", "Ollama"],
     },
   },
 ];

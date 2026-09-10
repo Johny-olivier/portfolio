@@ -107,17 +107,17 @@ export default [
       "laravel",
       "flightphp",
       "codeigniter",
-      "node.js",
       "spring",
       "spring boot",
       "python",
+      "node.js",
       "competences",
       "niveau",
       "stack",
       "technologies",
       "skills"
     ],
-    "text": "PHP, Java, Laravel, FlightPHP, CodeIgniter, Node.js, Spring, Spring Boot, Python. Avancé : PHP, Java. Intermédiaire : Laravel, FlightPHP, CodeIgniter, Node.js. Débutant : Spring, Spring Boot, Python. La logique, l'architecture et les données."
+    "text": "PHP, Java, Laravel, FlightPHP, CodeIgniter, Spring, Spring Boot, Python, Node.js. Avancé : PHP, Java. Intermédiaire : Laravel, FlightPHP, CodeIgniter, Spring, Spring Boot, Python. Débutant : Node.js. La logique, l'architecture et les données."
   },
   {
     "id": "frontend",
@@ -128,17 +128,17 @@ export default [
       "css3",
       "javascript",
       "bootstrap",
-      "tailwind",
       "react",
       "angular",
       "typescript",
+      "tailwind",
       "competences",
       "niveau",
       "stack",
       "technologies",
       "skills"
     ],
-    "text": "HTML5, CSS3, JavaScript, Bootstrap, Tailwind, React, Angular, TypeScript. Avancé : HTML5, CSS3, JavaScript. Intermédiaire : Bootstrap, Tailwind. Débutant : React, Angular, TypeScript. L'interface, le rendu et l'expérience utilisateur."
+    "text": "HTML5, CSS3, JavaScript, Bootstrap, React, Angular, TypeScript, Tailwind. Avancé : HTML5, CSS3, JavaScript. Intermédiaire : Bootstrap. Débutant : React, Angular, TypeScript, Tailwind. L'interface, le rendu et l'expérience utilisateur."
   },
   {
     "id": "architecture",
@@ -148,16 +148,16 @@ export default [
       "mvc",
       "poo avancée",
       "rest api",
+      "client-serveur",
       "authentification",
       "dao",
-      "client-serveur",
       "competences",
       "niveau",
       "stack",
       "technologies",
       "skills"
     ],
-    "text": "MVC, POO avancée, REST API, Authentification, DAO, Client-Serveur. Avancé : MVC, POO avancée. Intermédiaire : REST API, Authentification. Débutant : DAO, Client-Serveur. Patrons de conception et bonnes pratiques."
+    "text": "MVC, POO avancée, REST API, Client-Serveur, Authentification, DAO. Avancé : MVC, POO avancée, REST API, Client-Serveur. Intermédiaire : Authentification. Débutant : DAO. Patrons de conception et bonnes pratiques."
   },
   {
     "id": "databases",
@@ -165,8 +165,8 @@ export default [
     "section": "skill-databases",
     "keywords": [
       "mysql",
-      "sqlite",
       "postgresql",
+      "sqlite",
       "oracle",
       "microsoft sql server",
       "competences",
@@ -175,25 +175,25 @@ export default [
       "technologies",
       "skills"
     ],
-    "text": "MySQL, SQLite, PostgreSQL, Oracle, Microsoft SQL Server. Avancé : MySQL. Intermédiaire : SQLite, PostgreSQL. Débutant : Oracle, Microsoft SQL Server. Stockage et persistance."
+    "text": "MySQL, PostgreSQL, SQLite, Oracle, Microsoft SQL Server. Avancé : MySQL. Intermédiaire : PostgreSQL, SQLite. Débutant : Oracle, Microsoft SQL Server. Stockage et persistance."
   },
   {
     "id": "outils",
     "title": "Outils, Systèmes & IA",
     "section": "skill-outils",
     "keywords": [
-      "git",
-      "linux (ubuntu)",
-      "windows 11",
       "xampp",
-      "docker",
-      "maven",
       "tomcat",
-      "dbeaver",
-      "filezilla",
       "opencode",
       "gemini cli",
       "codex cli",
+      "git",
+      "docker",
+      "maven",
+      "linux (ubuntu)",
+      "dbeaver",
+      "filezilla",
+      "windows 11",
       "cline",
       "ollama",
       "competences",
@@ -202,7 +202,7 @@ export default [
       "technologies",
       "skills"
     ],
-    "text": "Git, Linux (Ubuntu), Windows 11, XAMPP, Docker, Maven, Tomcat, DBeaver, FileZilla, Opencode, Gemini CLI, Codex CLI, Cline, Ollama. Avancé : Git, Linux (Ubuntu), Windows 11, XAMPP. Intermédiaire : Docker, Maven, Tomcat, DBeaver, FileZilla. Débutant : Opencode, Gemini CLI, Codex CLI, Cline, Ollama. Environnement de développement et IA."
+    "text": "XAMPP, Tomcat, Opencode, Gemini CLI, Codex CLI, Git, Docker, Maven, Linux (Ubuntu), DBeaver, FileZilla, Windows 11, Cline, Ollama. Avancé : XAMPP, Tomcat, Opencode, Gemini CLI, Codex CLI. Intermédiaire : Git, Docker, Maven, Linux (Ubuntu). Débutant : DBeaver, FileZilla, Windows 11, Cline, Ollama. Environnement de développement et IA."
   },
   {
     "id": "family-private",
