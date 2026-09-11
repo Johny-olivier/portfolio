@@ -1283,6 +1283,8 @@ dialog::backdrop {
 .source-highlight {
   animation: source-reveal 1.5s ease-out;
 }
+
+
 @keyframes source-reveal {
   from {
     outline: 3px solid #899e6e;

@@ -258,7 +258,7 @@ dialog.addEventListener("close", () => {
   chatTrigger?.focus();
 });
 function sourceLink(source) {
-  const link = anchor("#" + source.section, source.title);
+  const link = anchor("#" + source.section, "Voir " + source.title);
   link.append(icon("arrow-right", 14));
   link.addEventListener("click", () => {
     dialog.close();
