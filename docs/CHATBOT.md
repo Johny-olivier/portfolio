@@ -1,5 +1,15 @@
 # Assistant du portfolio
 
+## Configuration actuelle : Gemini
+
+`assets/js/config.js` conserve `/api/chat`. `api/chat.js` est une fonction serveur destinée à l’hébergement Vercel déjà préparé dans le projet. Elle utilise `GEMINI_API_KEY` côté serveur et importe les informations générées dans `worker/knowledge.mjs`. La clé ne doit jamais être placée dans les fichiers du navigateur.
+
+Le serveur Python local et GitHub Pages n’exécutent pas cette fonction : le secours local prend alors le relais et l’indique. Pour une IA sur GitHub Pages, il faut configurer l’URL absolue d’un backend et ses origines CORS (par exemple le Worker décrit ci-dessous). La refonte visuelle n’a ni changé la clé, ni activé un forfait, ni effectué de déploiement.
+
+Les tests de Gemini utilisent un service simulé. Ils vérifient les nouvelles sources, la validation des réponses, les erreurs et l’absence de configuration. L’appel à un modèle réel et les quotas du compte restent à vérifier sur l’hébergement effectivement utilisé.
+
+## Alternative disponible : Cloudflare
+
 ## Architecture et coût
 
 Le portfolio reste statique sur GitHub Pages. Un Worker Cloudflare appelle Workers AI (Llama 3.1 8B) pour reformuler les informations du CV et retourne des réponses JSON structurées. Le navigateur construit les liens à partir d'une liste de sections autorisées.
@@ -48,8 +58,8 @@ Vérifier ensuite le chatbot sur la page, puis publier les fichiers du portfolio
 
 ## Données, confidentialité et limites
 
-- `assets/js/data.js` est la source éditoriale unique. `node scripts/build-knowledge.mjs` régénère les sources de l'assistant côté navigateur et Worker. Redéployer le Worker après modification.
-- Les questions sont transmises à Cloudflare seulement lorsque l'IA est configurée ; l'interface l'annonce. Aucun historique en base, cookie de suivi ou stockage local. La conversation disparaît à l'actualisation. Chaque question est indépendante (pas de mémoire conversationnelle envoyée au modèle).
+- `assets/js/data.js` est la source éditoriale unique (profil et projets publics). `node scripts/build-knowledge.mjs` régénère les sources de l'assistant côté navigateur et Worker. Redéployer le Worker après modification.
+- Avec le Worker Cloudflare, les questions sont transmises à Cloudflare seulement lorsque son URL est configurée ; l'interface l'annonce. Aucun historique en base, cookie de suivi ou stockage local. La conversation disparaît à l'actualisation. Chaque question est indépendante (pas de mémoire conversationnelle envoyée au modèle).
 - Le Worker n'enregistre pas les questions et n'utilise aucun outil externe. Le traitement et les journaux d'infrastructure restent soumis aux règles Cloudflare.
 - Corps limité à 4 Ko, question limitée à 500 caractères, réponse limitée à 600 tokens. Limitation approximative de 10 requêtes/minute par IP et par localisation Cloudflare ; plusieurs visiteurs derrière la même IP partagent cette limite.
 - CORS restreint les appels depuis les navigateurs, mais n'authentifie pas un client hors navigateur. Le quota du forfait Free reste le plafond de coût.

@@ -366,10 +366,19 @@ async function ask(question) {
   } finally {
     clearTimeout(timeout);
     if (version === requestVersion) {
-      pending.replaceWith(renderAnswer(answer, note));
+      const reply = renderAnswer(answer, note);
+      pending.replaceWith(reply);
       submit.disabled = false;
       controller = null;
-      messages.scrollTop = messages.scrollHeight;
+      // Keep the beginning of a long answer visible instead of skipping to its end.
+      messages.scrollTo({
+        top:
+          messages.scrollTop +
+          reply.getBoundingClientRect().top -
+          messages.getBoundingClientRect().top -
+          16,
+        behavior: "instant",
+      });
     }
   }
 }
@@ -392,5 +401,5 @@ $("#chat-reset").addEventListener("click", () => {
   input.focus();
 });
 $("#chat-privacy-copy").textContent = CHAT_CONFIG.endpoint
-  ? "Réponses générées à partir du profil et des projets publics de Johny. Votre question est transmise au service IA configuré (Gemini pour /api/chat). Aucun historique n’est enregistré par cette page. Les liens permettent de vérifier les réponses."
+  ? `Réponses générées à partir du profil et des projets publics de Johny. Votre question est transmise à ${CHAT_CONFIG.endpoint === "/api/chat" ? "Google Gemini" : "un service d’IA"}. Aucun historique n’est enregistré par cette page. Les liens permettent de vérifier les réponses.`
   : "Assistant local basé sur le profil et les projets publics de Johny. Vos questions restent dans ce navigateur et sont effacées à l’actualisation.";

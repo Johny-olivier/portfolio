@@ -1,37 +1,40 @@
 # Johny Olivier — Portfolio
 
-Portfolio éditorial responsive en HTML, CSS et JavaScript natif. Aucun framework, compilation ou serveur requis pour GitHub Pages.
+Portfolio responsive en HTML, CSS et JavaScript natif : sélection de projets, recherche par nom ou technologie, compétences, parcours et assistant conversationnel.
 
 ## Développement
 
 ```bash
 npm run dev
 # http://127.0.0.1:4173
+npm run build
 npm test
 ```
 
+Le serveur Python sert la page statique. Il n'exécute pas `/api/chat` : l'assistant utilise alors son secours local. Aucune installation n'est nécessaire pour la page et les tests (Node.js récent requis).
+
 ## Contenu
 
-`assets/js/data.js` contient les données du CV **Développeur Full Stack Junior – AINAMBININA Johny Olivier**, version du 3 septembre 2026 (la plus récente des deux versions fullstack retrouvées). Les niveaux sont distingués : pratique autonome, intermédiaire et apprentissage. Les projets assistés par IA sont identifiés selon le CV. Le document téléchargeable est une copie exacte du CV source.
+- `assets/js/data.js` : profil et compétences conservés depuis la version présente au début de la refonte ; projets enrichis à partir des README publics du GitHub de Johny.
+- 11 projets présentés, dont 6 dans la sélection initiale. 10 dépôts publics vérifiés ; Mini SGBD conserve sa présentation existante sans lien GitHub inventé.
+- Recherche et compteurs calculés depuis les projets réellement présents.
+- `npm run build` régénère `assets/js/knowledge.js` et `worker/knowledge.mjs`. La page, le secours local et les deux backends utilisent les mêmes informations.
+- Le PDF téléchargeable est conservé.
 
-Après modification des données :
-
-```bash
-npm run build
-```
-
-Cette commande régénère les sources partagées de l'assistant. Redéployer aussi le Worker si l'IA est activée.
+Les sources des descriptions figurent dans [docs/PROJECT-SOURCES.md](docs/PROJECT-SOURCES.md). La présence d'une technologie dans un dépôt n'est pas assimilée à un niveau de maîtrise.
 
 ## Assistant
 
-Interface conversationnelle avec réponses structurées, liens vers les sections précises et accès clavier. Le service Cloudflare Workers AI est implémenté dans `worker/`, mais **l'IA n'est active qu'après déploiement et renseignement de son URL** dans `assets/js/config.js`. Sans configuration ou en cas de quota épuisé, un mode local explicitement identifié répond depuis le CV.
+`assets/js/config.js` conserve l'URL `/api/chat` configurée avant cette refonte. La fonction `api/chat.js` appelle Gemini côté serveur avec `GEMINI_API_KEY`. Les réponses sont structurées, leurs sources sont validées, puis les liens sont créés par le navigateur.
 
-Voir [l'activation gratuite et les limites](docs/CHATBOT.md).
+Le service Cloudflare de `worker/` reste une alternative. Aucun basculement d'hébergement ni déploiement n'est effectué automatiquement. Voir [docs/CHATBOT.md](docs/CHATBOT.md).
 
-## Hébergement
+## Design
 
-Conserver la publication GitHub Pages existante à la racine du dépôt. Les chemins des ressources sont relatifs et compatibles avec un site de projet `/portfolio/`. Le frontend est indépendant du service IA et ne contient aucun secret. Aucun déploiement ni push n'est effectué par `npm run build`.
+Fond blanc cassé, accents sauge et graphite, arrondis de 8 à 16 px, hiérarchie sobre. Portrait monochrome avec cadre incliné conservé. Les flèches obliques décoratives ont été supprimées ; les actions utilisent des icônes locales.
 
-## Direction visuelle
+Les PNG Icons8 sont téléchargés dans `assets/icons/`, avec attribution dans le pied de page et provenance dans `assets/icons/sources.json`. Les polices Geist et Inter viennent de Google Fonts, avec une police système de secours.
 
-Ivoire, orange vermillon, vert profond ; Space Grotesk et DM Sans, avec des italiques serif. Portrait monochrome, grandes compositions typographiques, vignettes de projets typographiques (pas de fausses captures produit), sections contrastées. Police système de secours si Google Fonts est indisponible. Filtres, fiches détaillées, menu mobile, navigation clavier, réduction des mouvements et liens directs vers les projets.
+## Vérification
+
+Consulter [docs/VALIDATION.md](docs/VALIDATION.md) pour les tests fonctionnels, les dimensions vérifiées et les limites de la validation du modèle réel.
