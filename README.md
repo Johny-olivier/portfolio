@@ -11,23 +11,23 @@ npm run build
 npm test
 ```
 
-Le serveur Python sert la page statique. Il n'exécute pas `/api/chat` : l'assistant utilise alors son secours local. Aucune installation n'est nécessaire pour la page et les tests (Node.js récent requis).
+Le serveur Python sert la page statique. Quand `assets/js/config.js` pointe vers le Worker Cloudflare, l'assistant utilise ce backend IA même en local, à condition que l'origine locale soit autorisée côté Worker. Aucune installation n'est nécessaire pour la page et les tests (Node.js récent requis).
 
 ## Contenu
 
 - `assets/js/data.js` : profil et compétences conservés depuis la version présente au début de la refonte ; projets enrichis à partir des README publics du GitHub de Johny.
 - 11 projets présentés, dont 6 dans la sélection initiale. 10 dépôts publics vérifiés ; Mini SGBD conserve sa présentation existante sans lien GitHub inventé.
 - Recherche et compteurs calculés depuis les projets réellement présents.
-- `npm run build` régénère `assets/js/knowledge.js` et `worker/knowledge.mjs`. La page, le secours local et les deux backends utilisent les mêmes informations.
+- `npm run build` régénère `assets/js/knowledge.js` et `worker/knowledge.mjs`. La page, le secours local et le Worker Cloudflare utilisent les mêmes informations.
 - Le PDF téléchargeable est conservé.
 
 Les sources des descriptions figurent dans [docs/PROJECT-SOURCES.md](docs/PROJECT-SOURCES.md). La présence d'une technologie dans un dépôt n'est pas assimilée à un niveau de maîtrise.
 
 ## Assistant
 
-`assets/js/config.js` conserve l'URL `/api/chat` configurée avant cette refonte. La fonction `api/chat.js` appelle Gemini côté serveur avec `GEMINI_API_KEY`. Les réponses sont structurées, leurs sources sont validées, puis les liens sont créés par le navigateur.
+`assets/js/config.js` pointe vers le Worker Cloudflare public. Le Worker appelle Workers AI, valide les réponses structurées et laisse le navigateur créer les liens vers les sections autorisées.
 
-Le service Cloudflare de `worker/` reste une alternative. Aucun basculement d'hébergement ni déploiement n'est effectué automatiquement. Voir [docs/CHATBOT.md](docs/CHATBOT.md).
+La fonction `api/chat.js` reste présente comme ancien backend Gemini, mais elle n'est pas utilisée par la configuration actuelle. Voir [docs/CHATBOT.md](docs/CHATBOT.md).
 
 ## Design
 

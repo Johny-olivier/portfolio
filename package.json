@@ -2,7 +2,7 @@
   "name": "johny-olivier-portfolio",
   "version": "2.0.0",
   "private": true,
-  "description": "Portfolio statique avec projets GitHub et assistant Gemini ou Cloudflare",
+  "description": "Portfolio statique avec projets GitHub et assistant Cloudflare Workers AI",
   "scripts": {
     "build": "node scripts/build-knowledge.mjs",
     "test": "node --test tests/*.test.mjs",

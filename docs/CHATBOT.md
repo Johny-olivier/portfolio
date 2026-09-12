@@ -1,14 +1,19 @@
 # Assistant du portfolio
 
-## Configuration actuelle : Gemini
+## Configuration actuelle : Cloudflare Workers AI
 
-`assets/js/config.js` conserve `/api/chat`. `api/chat.js` est une fonction serveur destinée à l’hébergement Vercel déjà préparé dans le projet. Elle utilise `GEMINI_API_KEY` côté serveur et importe les informations générées dans `worker/knowledge.mjs`. La clé ne doit jamais être placée dans les fichiers du navigateur.
+`assets/js/config.js` pointe vers le Worker public Cloudflare :
 
-Le serveur Python local et GitHub Pages n’exécutent pas cette fonction : le secours local prend alors le relais et l’indique. Pour une IA sur GitHub Pages, il faut configurer l’URL absolue d’un backend et ses origines CORS (par exemple le Worker décrit ci-dessous). La refonte visuelle n’a ni changé la clé, ni activé un forfait, ni effectué de déploiement.
+```js
+const CHAT_CONFIG = Object.freeze({
+  endpoint:
+    "https://johny-portfolio-assistant.johny-olivier.workers.dev/chat",
+});
+```
 
-Les tests de Gemini utilisent un service simulé. Ils vérifient les nouvelles sources, la validation des réponses, les erreurs et l’absence de configuration. L’appel à un modèle réel et les quotas du compte restent à vérifier sur l’hébergement effectivement utilisé.
+Le portfolio reste statique sur GitHub Pages. Le navigateur envoie la question au Worker, puis le Worker appelle Workers AI et renvoie une réponse JSON structurée. Les liens affichés par le chatbot sont construits côté navigateur à partir des sources autorisées du portfolio.
 
-## Alternative disponible : Cloudflare
+La fonction `api/chat.js` existe encore comme ancien backend Gemini, mais elle n'est pas utilisée tant que `assets/js/config.js` garde l'URL Cloudflare.
 
 ## Architecture et coût
 
@@ -22,33 +27,23 @@ Le portfolio reste statique sur GitHub Pages. Un Worker Cloudflare appelle Worke
 
 Le mode local documenté est utilisé si l'URL n'est pas configurée, si le quota est atteint, si la réponse est invalide ou si le réseau échoue. L'interface indique toujours quel mode répond.
 
-## Activation (compte Cloudflare Free requis)
+## Activation ou redéploiement
 
 Depuis la racine du dépôt :
 
 ```bash
 node scripts/build-knowledge.mjs
-npx wrangler login
 npx wrangler deploy --config worker/wrangler.jsonc
 ```
 
-La connexion ouvre le navigateur : s'authentifier dans son propre compte Cloudflare, sans copier de jeton dans le portfolio. Le binding AI gère l'accès au modèle côté serveur.
+La connexion Cloudflare se fait avec le compte gratuit du propriétaire du portfolio. Ne copier aucun jeton dans le dépôt. Le binding AI gère l'accès au modèle côté serveur.
 
-Copier l'URL publique du Worker affichée par Wrangler dans `assets/js/config.js`, en ajoutant `/chat` :
-
-```js
-const CHAT_CONFIG = Object.freeze({
-  endpoint:
-    "https://johny-portfolio-assistant.VOTRE-SOUS-DOMAINE.workers.dev/chat",
-});
-```
-
-`worker/wrangler.jsonc` autorise l'origine `https://johny-olivier.github.io`. Ajouter l'origine exacte si un domaine personnalisé est utilisé. L'origine ne contient pas le chemin `/portfolio/`. Pour tester en local, ajouter temporairement `http://127.0.0.1:4173` aux origines, séparé par une virgule, et redéployer.
+Après toute modification de `assets/js/data.js`, exécuter `node scripts/build-knowledge.mjs`, redéployer le Worker, puis republier la page statique si les fichiers du navigateur ont changé. `worker/wrangler.jsonc` autorise `https://johny-olivier.github.io` et `http://127.0.0.1:4173`.
 
 Tester une question réelle après déploiement :
 
 ```bash
-curl 'https://johny-portfolio-assistant.VOTRE-SOUS-DOMAINE.workers.dev/chat' \
+curl 'https://johny-portfolio-assistant.johny-olivier.workers.dev/chat' \
   -H 'Origin: https://johny-olivier.github.io' \
   -H 'Content-Type: application/json' \
   --data '{"question":"Quel est le niveau de Johny en React ?"}'
@@ -63,7 +58,7 @@ Vérifier ensuite le chatbot sur la page, puis publier les fichiers du portfolio
 - Le Worker n'enregistre pas les questions et n'utilise aucun outil externe. Le traitement et les journaux d'infrastructure restent soumis aux règles Cloudflare.
 - Corps limité à 4 Ko, question limitée à 500 caractères, réponse limitée à 600 tokens. Limitation approximative de 10 requêtes/minute par IP et par localisation Cloudflare ; plusieurs visiteurs derrière la même IP partagent cette limite.
 - CORS restreint les appels depuis les navigateurs, mais n'authentifie pas un client hors navigateur. Le quota du forfait Free reste le plafond de coût.
-- Le prompt limite les réponses au CV ; le serveur rejette les structures invalides, les citations inconnues et les liens générés. Les textes sont affichés avec `textContent`, jamais comme HTML. Une IA générative peut malgré tout se tromper : les liens vers les sources permettent de vérifier. Les tests simulés ne remplacent pas une validation réelle du modèle après activation.
+- Le prompt limite les réponses au CV ; le serveur rejette les structures invalides, les citations inconnues et les liens générés. Les textes sont affichés avec `textContent`, jamais comme HTML. Une IA générative peut malgré tout se tromper : les liens vers les sources permettent de vérifier. Les tests simulés ne remplacent pas une validation réelle du modèle après redéploiement.
 
 ## Validation
 
@@ -72,4 +67,4 @@ node --test tests/*.test.mjs
 node scripts/build-knowledge.mjs
 ```
 
-Après activation, tester aussi une question hors sujet, une tentative de détournement, une information absente du CV, plusieurs projets, un niveau en apprentissage et une indisponibilité de l'API. L'IA ne doit ni inventer une expérience ni présenter une technologie en apprentissage comme maîtrisée.
+Après redéploiement, tester aussi une question hors sujet, une tentative de détournement, une information absente du CV, plusieurs projets, un niveau en apprentissage et une indisponibilité de l'API. L'IA ne doit ni inventer une expérience ni présenter une technologie en apprentissage comme maîtrisée.
